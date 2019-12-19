@@ -6,51 +6,16 @@
   <meta name="keywords" content=" C语言 ">
   <meta name="description" content="C - note（C语言的笔记） | 星幕·云影的博客 - yunying61">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="目录 什么是FTP服务器 本地FTP服务器搭建（简易版） FTP服务器发布至外网（Serv-u版）  什么是FTP服务器FTP服务器(File Transfer Protocol Server)是在互联网上提供文件存储和访问服务的计算机，它们依照FTP协议提供服务。 FTP是File Transfer Protocol(文件传输协议)。顾名思义，就是专门用来传输文件的协议。简单地说，支持FTP协议">
-<meta name="keywords" content="FTP,服务器">
+<meta name="description" content="Why Blog对博客的理解喜欢写Blog的人，会经历三个阶段。  第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。   第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。   第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。  我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对">
+<meta name="keywords" content="yelog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FTP服务器搭建">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;14&#x2F;FTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA&#x2F;index.html">
+<meta property="og:title" content="Why Blog">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;12&#x2F;Why-Blog&#x2F;index.html">
 <meta property="og:site_name" content="星幕·云影的博客 - yunying61">
-<meta property="og:description" content="目录 什么是FTP服务器 本地FTP服务器搭建（简易版） FTP服务器发布至外网（Serv-u版）  什么是FTP服务器FTP服务器(File Transfer Protocol Server)是在互联网上提供文件存储和访问服务的计算机，它们依照FTP协议提供服务。 FTP是File Transfer Protocol(文件传输协议)。顾名思义，就是专门用来传输文件的协议。简单地说，支持FTP协议">
+<meta property="og:description" content="Why Blog对博客的理解喜欢写Blog的人，会经历三个阶段。  第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。   第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。   第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。  我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2at93ojv.bkt.clouddn.com&#x2F;win-IIS.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2at93ojv.bkt.clouddn.com&#x2F;IP%20%E7%AB%AF%E5%8F%A3%20SSL%E8%AE%BE%E7%BD%AE.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2at93ojv.bkt.clouddn.com&#x2F;%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83%E4%BF%A1%E6%81%AF%E8%AE%BE%E7%BD%AE.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2at93ojv.bkt.clouddn.com&#x2F;FTP%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2at93ojv.bkt.clouddn.com&#x2F;FTP%E6%8E%88%E6%9D%83%E8%A7%84%E5%88%99%E4%B8%BE%E4%BE%8B.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2at93ojv.bkt.clouddn.com&#x2F;%E7%AE%A1%E7%90%86.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2at93ojv.bkt.clouddn.com&#x2F;%E6%96%B0%E7%94%A8%E6%88%B7.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;1.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;2.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;3.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;4.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;5.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;6.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;7.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;11.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;22.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;33.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;44.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;55.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;66.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;111.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;1111.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;2222.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;3333.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;4444.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;222.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;333.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;444.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;a.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;g.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;h.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;fb1.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;fb2.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2i2y0l44.bkt.clouddn.com&#x2F;fb3.png">
-<meta property="og:updated_time" content="2019-12-14T07:34:19.000Z">
+<meta property="og:updated_time" content="2019-12-12T12:38:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;q2at93ojv.bkt.clouddn.com&#x2F;win-IIS.png">
 
 
 <link rel="icon" href="/img/Noctis.jpg">
@@ -310,6 +275,10 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a class="color1">yelog</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a class="color5">hexo</a>
     </li>
     
@@ -318,7 +287,7 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">yelog</a>
+        <a class="color4">markdown</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -327,10 +296,6 @@
     
     <li class="article-tag-list-item">
         <a class="color4">服务器</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">markdown</a>
     </li>
     
     <div class="clearfix"></div>
@@ -345,6 +310,14 @@
            data-author="" >
             <span class="post-title" title="星幕·云影的网页链接库">星幕·云影的网页链接库</span>
             <span class="post-date" title="2019-12-01 17:09:18">2019/12/01</span>
+        </a>
+        
+        <a  class="未分类 "
+           href="/2019/12/12/Why-Blog/"
+           data-tag="yelog"
+           data-author="" >
+            <span class="post-title" title="Why Blog">Why Blog</span>
+            <span class="post-date" title="2019-12-12 20:38:44">2019/12/12</span>
         </a>
         
         <a  class="笔记 "
@@ -364,27 +337,11 @@
         </a>
         
         <a  class="未分类 "
-           href="/2019/12/12/Why-Blog/"
-           data-tag="yelog"
-           data-author="" >
-            <span class="post-title" title="Why Blog">Why Blog</span>
-            <span class="post-date" title="2019-12-12 20:38:44">2019/12/12</span>
-        </a>
-        
-        <a  class="未分类 "
            href="/2019/11/24/hello-world/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="Hello World">Hello World</span>
             <span class="post-date" title="2019-11-24 20:26:18">2019/11/24</span>
-        </a>
-        
-        <a  class="服务器 搭建 网络 "
-           href="/2019/12/14/FTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"
-           data-tag="FTP,服务器"
-           data-author="" >
-            <span class="post-title" title="FTP服务器搭建">FTP服务器搭建</span>
-            <span class="post-date" title="2019-12-14 15:34:19">2019/12/14</span>
         </a>
         
         <a  class="未分类 笔记 "
@@ -393,6 +350,14 @@
            data-author="" >
             <span class="post-title" title="markdown的笔记（代码运用)">markdown的笔记（代码运用)</span>
             <span class="post-date" title="2019-11-30 17:33:10">2019/11/30</span>
+        </a>
+        
+        <a  class="服务器 搭建 网络 "
+           href="/2019/12/14/FTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"
+           data-tag="FTP,服务器"
+           data-author="" >
+            <span class="post-title" title="FTP服务器搭建">FTP服务器搭建</span>
+            <span class="post-date" title="2019-12-14 15:34:19">2019/12/14</span>
         </a>
         
         <a  class="未分类 "
@@ -461,7 +426,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C语言-（Windows）环境配置"><span class="toc-text">C语言 （Windows）环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码编辑器"><span class="toc-text">代码编辑器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#C-程序结构"><span class="toc-text">C 程序结构</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C语言-（Windows）环境配置"><span class="toc-text">C语言 （Windows）环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码编辑器"><span class="toc-text">代码编辑器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#C-程序结构"><span class="toc-text">C 程序结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#C-基本语法"><span class="toc-text">C 基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#C-的令牌（Tokens）"><span class="toc-text">C 的令牌（Tokens）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分号"><span class="toc-text">分号(;)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标识符"><span class="toc-text">标识符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关键字"><span class="toc-text">关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-中的空格"><span class="toc-text">C 中的空格</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#C-数据类型"><span class="toc-text">C 数据类型</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -478,29 +443,25 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="C语言-（Windows）环境配置"><a href="#C语言-（Windows）环境配置" class="headerlink" title="C语言 （Windows）环境配置"></a>C语言 （Windows）环境配置</h1><h2 id="代码编辑器"><a href="#代码编辑器" class="headerlink" title="代码编辑器"></a>代码编辑器</h2><ul>
-<li>首推<abbr title="Visual Studio Code"><b>VS Code</b></abbr>,这是一款由微软开发的免费开源的现代化轻量级代码编辑器，支持几乎所有主流的编程语言的开发、语法高亮、智能代码补全、自定义热键、括号匹配、代码片段、代码对比 Diff、GIT 等特性，支持插件扩展，并针对网页开发和云端应用开发做了优化。软件跨平台支持 Win、Mac 以及 Linux，运行流畅，软件小巧精致。</li>
-</ul>
-<ul>
-<li><blockquote>
+<li><p>首推<abbr title="Visual Studio Code"><b>VS Code</b></abbr>,这是一款由微软开发的免费开源的现代化轻量级代码编辑器，支持几乎所有主流的编程语言的开发、语法高亮、智能代码补全、自定义热键、括号匹配、代码片段、代码对比 Diff、GIT 等特性，支持插件扩展，并针对网页开发和云端应用开发做了优化。软件跨平台支持 Win、Mac 以及 Linux，运行流畅，软件小巧精致。</p>
+<blockquote>
 <p>安装地址：<a href="https://code.visualstudio.com/Download" target="_blank" rel="noopener">VS Code官网下载</a><br>百度云（版本：win64位-1.40.2）链接: <a href="https://pan.baidu.com/s/1lkAnve07Zk0pDGXMtJ8HSw" target="_blank" rel="noopener">https://pan.baidu.com/s/1lkAnve07Zk0pDGXMtJ8HSw</a> 提取码: rh99</p>
 </blockquote>
 </li>
-</ul>
-<ul>
-<li>其次就是学生党们可能还在用的<strong>Visual C++ 6.0</strong><blockquote>
+<li><p>其次就是学生党们可能还在用的<strong>Visual C++ 6.0</strong></p>
+<blockquote>
 <p>百度云 链接: <a href="https://pan.baidu.com/s/10-YF4j3q5-1ElOBiKOM-tg" target="_blank" rel="noopener">https://pan.baidu.com/s/10-YF4j3q5-1ElOBiKOM-tg</a> 提取码: rdqq</p>
 </blockquote>
 </li>
-<li>GCC的话。。。有点麻烦不推荐，为了在 Windows 上安装 GCC，您需要安装 MinGW。为了安装 MinGW，请访问 MinGW 的主页 <a href="https://www.mingw.org" target="_blank" rel="noopener">https://www.mingw.org</a>，进入 MinGW 下载页面，下载最新版本的 MinGW 安装程序。如果想弄的话下面这个链接  <blockquote><p>windows下安装MinGW及C++的环境配置</p>
+<li><p>GCC的话。。。有点麻烦不推荐，为了在 Windows 上安装 GCC，您需要安装 MinGW。为了安装 MinGW，请访问 MinGW 的主页 <a href="https://www.mingw.org" target="_blank" rel="noopener">https://www.mingw.org</a>，进入 MinGW 下载页面，下载最新版本的 MinGW 安装程序。如果想弄的话下面这个链接  </p>
+<blockquote><p>windows下安装MinGW及C++的环境配置</p>
 <footer><strong>啊sir_, -</strong><cite><a href="https://blog.csdn.net/u013171283/article/details/80898442" target="_blank" rel="noopener">地址</a></cite></footer></blockquote>
 
 </li>
 </ul>
 <h1 id="C-程序结构"><a href="#C-程序结构" class="headerlink" title="C 程序结构"></a>C 程序结构</h1><p>其实刚学C语言的时候，不要觉得这串代码很奇怪，那串代码也很奇怪。每当遇到一个陌生代码的时候，我会先假设它有一个特殊用途，然后忽略掉它的陌生感带来的恐惧。随着学习的深入，你迟早会学到这个曾经陌生的代码的用处。</p>
 <ol>
-<li>首先先了解以下C程序的结构  </li>
-</ol>
-<ul>
+<li>首先先了解以下C程序的结构  <ul>
 <li>C 程序主要包括以下部分：</li>
 <li>预处理器指令</li>
 <li>函数</li>
@@ -508,19 +469,84 @@
 <li>语句 &amp; 表达式</li>
 <li>注释（这个看你需不需要注释）  </li>
 </ul>
+</li>
+</ol>
 <ol start="2">
 <li>再看一下一个简单的C程序长什么样<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">void main()</span><br><span class="line">&#123;</span><br><span class="line">   printf(&quot;Hello, World!&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>  
 它的作用很简单，就是在屏幕上输出Hello, World!<br>由于过于简单吗，我就不贴图片了（贴图片都更麻烦）。  </li>
 </ol>
 <ol start="3">
-<li>接下来我们讲解一下上面这段程序：</li>
-</ol>
-<ul>
+<li>接下来我们讲解一下上面这段程序：<ul>
 <li>程序的第一行 #include &lt;stdio.h&gt; 是预处理器指令，告诉 C 编译器在实际编译之前要包含 stdio.h 文件。  </li>
 <li>void main() 是主函数，程序从这里开始执行。</li>
 <li>printf(“…”) 是 C 中另一个可用的函数（它被包含在stdio.h 文件），会在屏幕上显示消息 “Hello, World!”。</li>
 </ul>
-
+</li>
+</ol>
+<h1 id="C-基本语法"><a href="#C-基本语法" class="headerlink" title="C 基本语法"></a>C 基本语法</h1><h2 id="C-的令牌（Tokens）"><a href="#C-的令牌（Tokens）" class="headerlink" title="C 的令牌（Tokens）"></a>C 的令牌（Tokens）</h2><p>C 程序由各种令牌组成，令牌可以是关键字、标识符、常量、字符串值，或者是一个符号。例如，下面的 C 语句包括五个令牌：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">printf(&quot;Hello, World! \n&quot;);</span><br></pre></td></tr></table></figure> 
+<p>这五个令牌分别是：</p>
+<pre><code>printf
+(
+&quot;Hello, World! \n&quot;
+)
+;</code></pre><h2 id="分号"><a href="#分号" class="headerlink" title="分号(;)"></a>分号(;)</h2><p>在 C 程序中，分号是语句结束符。也就是说，每个语句必须以分号结束。它表明一个逻辑实体的结束。(在某些函数运用中要特别注意，如:if函数、for循环函数…)</p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>注释在某些方面看来，还是很重要的。当你共享代码时，方便别人阅读您的代码。<br>C 语言有两种注释方式：<br>1.单行注释</p>
+<pre><code>// 单行注释，双左斜杠 后全部为注释。</code></pre><p>以 // 开始的单行注释，这种注释可以单独占一行。</p>
+<p>2.多功能注释</p>
+<pre><code>/* 单行注释 */
+/* 
+多行注释
+多行注释
+多行注释
+*/</code></pre><p> /* <em>/ 这种格式的注释可以单行或多行。<br>您*</em>不能在注释内嵌套注释**，注释也不能出现在字符串或字符值中。<br>如：</p>
+<pre><code>printf(&quot;//how do you do!\n&quot;);</code></pre><p>或</p>
+<pre><code>printf(&quot;/*how do you do!*/\n);</code></pre><p>输出分别是：//how do you do！和 /<em>how do you do!</em>/</p>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p><strong>标识符</strong>：在编程语言中，标识符是用户编程时使用的名字，变量、常量、函数、语句块都有名字。是用来标识某个实体的一个符号，是对变量名、函数名、标号和其他各种用户定义的对象命名。</p>
+<blockquote>
+<p>C语言中标识符的命名规范：</p>
+</blockquote>
+<ol>
+<li>标识符由字母、数字、下划线组成，并且首字母不能是数字。</li>
+<li>不能把C的关键字作为用户的标识符，例如：if、for、while等。（注：标识符不能和C语言的关键字相同，也不能和用户自定义的函数或C语言库函数同名）</li>
+<li>标识符长度是由机器上的编译系统决定的，一般的限制为8字符，(注：8字符长度限制是C89标准，C99标准已经扩充长度，其实大部分工业标准都更长)。</li>
+<li>标识符对大小写敏感，即严格区分大小写。一般对变量名用小写，符号常量命名用大写。（注：C语言中字母是区分大小写的，因此score、Score、SCORE分别代表三个不同的标识符）</li>
+<li>标识符命名应做到”见名知意”，例如，长度（外语：length），求和、总计（外语：sum），圆周率（外语：pi）</li>
+</ol>
+<p>C 标识符是用来标识变量、函数，或任何其他用户自定义项目的名称。一个标识符以字母 A-Z 或 a-z 或<code>下划线 _</code>开始，后跟零个或多个字母、下划线和数字（0-9）。<br>C 标识符内不允许出现标点字符，比如 @、$ 和 %。C 是区分大小写的编程语言。因此，在 C 中，Manpower 和 manpower 是两个不同的标识符。下面列出几个有效的标识符：</p>
+<table>
+<thead>
+<tr>
+<th align="center">1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">mohd</td>
+<td>zara</td>
+<td>abc</td>
+<td>move_name</td>
+<td>a_123</td>
+</tr>
+<tr>
+<td align="center">myname50</td>
+<td>_temp</td>
+<td>j</td>
+<td>a23b9</td>
+<td>retVal</td>
+</tr>
+</tbody></table>
+<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><p>下表列出了 C 中的保留字。这些保留字不能作为常量名、变量名或其他标识符名称。</p>
+<blockquote>
+<p><strong>关键字</strong>     <code>说明</code><br>auto    声明自动变量<br>break    跳出当前循环<br>case    开关语句分支<br>char    声明字符型变量或函数返回值类型<br>const    声明只读变量<br>continue    结束当前循环，开始下一轮循环<br>default    开关语句中的”其它”分支<br>do    循环语句的循环体<br>double    声明双精度浮点型变量或函数返回值类型<br>else    条件语句否定分支（与 if 连用）<br>enum    声明枚举类型<br>extern    声明变量或函数是在其它文件或本文件的其他位置定义<br>float    声明浮点型变量或函数返回值类型<br>for    一种循环语句<br>goto    无条件跳转语句<br>if    条件语句<br>int    声明整型变量或函数<br>long    声明长整型变量或函数返回值类型<br>register    声明寄存器变量<br>return    子程序返回语句（可以带参数，也可不带参数）<br>short    声明短整型变量或函数<br>signed    声明有符号类型变量或函数<br>sizeof    计算数据类型或变量长度（即所占字节数）<br>static    声明静态变量<br>struct    声明结构体类型<br>switch    用于开关语句<br>typedef    用以给数据类型取别名<br>unsigned    声明无符号类型变量或函数<br>union    声明共用体类型<br>void    声明函数无返回值或无参数，声明无类型指针<br>volatile    说明变量在程序执行中可被隐含地改变<br>while    循环语句的循环条件<br><strong>C99 新增关键字</strong><br>_Bool<br>_Complex<br>_Imaginary<br>inline<br>restrict<br><strong>C11 新增关键字</strong><br>_Alignas<br>_Alignof<br>_Atomic<br>_Generic<br>_Noreturn<br>_Static_assert    _Thread_local</p>
+</blockquote>
+<h2 id="C-中的空格"><a href="#C-中的空格" class="headerlink" title="C 中的空格"></a>C 中的空格</h2><p>只包含空格的行，被称为空白行，可能带有注释，C 编译器会完全忽略它。<br>在 C 中，空格用于描述空白符、制表符、换行符和注释。空格分隔语句的各个部分，让编译器能识别语句中的某个元素（比如 int）在哪里结束，下一个元素在哪里开始。因此，在下面的语句中：</p>
+<pre><code>int age;</code></pre><p>在这里，int 和 age 之间必须至少有一个空格字符（通常是一个空白符），这样编译器才能够区分它们。另一方面，在下面的语句中：</p>
+<pre><code>fruit = apples + oranges;   // 获取水果的总数</code></pre><p>fruit 和 =，或者 = 和 apples 之间的空格字符不是必需的，但是为了增强可读性，您可以根据需要适当增加一些空格。</p>
+<h1 id="C-数据类型"><a href="#C-数据类型" class="headerlink" title="C 数据类型"></a>C 数据类型</h1>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 qasdwasd@qq.com </span>
     </div>
@@ -600,7 +626,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#yunying61','#HTML','#网页','#hexo','#C语言','#yelog','#FTP','#服务器','#markdown',],
+            'data': ['#yunying61','#HTML','#网页','#yelog','#hexo','#C语言','#markdown','#FTP','#服务器',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
