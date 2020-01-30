@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Minecraft服务器 问题汇总 | 星幕·云影的博客 - yunying61</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Minecraft服务器 问题汇总 | 星幕·云影的博客 - yunying61">
+  <title>配置Minecraft服务端文件 | 星幕·云影的博客 - yunying61</title>
+  <meta name="keywords" content=" Minecraft , 我的世界 , 服务器 , 配置文件 ">
+  <meta name="description" content="配置Minecraft服务端文件 | 星幕·云影的博客 - yunying61">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="配置Minecraft服务端文件 注：这是java版的服务端参数，参数介绍翻译自Mojang官方文档，地址:https:&#x2F;&#x2F;minecraft.gamepedia.com&#x2F;Server.properties   spawn-protection=16&#x2F;* 通过将该值进行(x*2)+1的运算来决定出生点的保护半径。设置为0将不会禁用出生点保护。设置为0将会保护位于出生点的1x1方块区域，设置为1将会">
 <meta name="keywords" content="Minecraft,我的世界,服务器,配置文件">
@@ -524,19 +524,41 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Minecraft服务器-问题汇总" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-配置Minecraft服务端文件" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Minecraft服务器 问题汇总</h1>
+        <h1 class="article-title">配置Minecraft服务端文件</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a  data-rel="服务器">服务器</a>/
+            
+                <a  data-rel="搭建">搭建</a>/
+            
+                <a  data-rel="Minecraft">Minecraft</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color5">Minecraft</a>
+            
+            <a class="color5">我的世界</a>
+            
+            <a class="color4">服务器</a>
+            
+            <a class="color5">配置文件</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-01-14 13:48:13'>2020-01-14 13:48</time>
+        创建时间:<time class="date" title='更新时间: 2020-01-30 14:43:07'>2020-01-30 14:43</time>
         
     </div>
     <div class="article-meta">
@@ -558,7 +580,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#配置Minecraft服务端文件"><span class="toc-text">配置Minecraft服务端文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基岩版服务端配置文件"><span class="toc-text">基岩版服务端配置文件</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -574,8 +596,145 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>当你看到这句话的时候，其实就可以跳过这篇文章了。</strong><br>没有内容的原因：要么是我忘了要补这篇文章，要么是我还没准备写，要么是还没想好内容。</p>
-<p>还请阅读其他文章把！</p>
+        <h1 id="配置Minecraft服务端文件"><a href="#配置Minecraft服务端文件" class="headerlink" title="配置Minecraft服务端文件"></a>配置Minecraft服务端文件</h1><blockquote>
+<p>注：这是java版的服务端参数，参数介绍翻译自Mojang官方文档，地址:<a href="https://minecraft.gamepedia.com/Server.properties" target="_blank" rel="noopener">https://minecraft.gamepedia.com/Server.properties</a></p>
+</blockquote>
+<blockquote>
+<p>spawn-protection=16<br>/* 通过将该值进行(x*2)+1的运算来决定出生点的保护半径。设置为0将不会禁用出生点保护。设置为0将会保护位于出生点的1x1方块区域，设置为1将会保护以出生点为中心的3x3方块区域。设置为2会保护5x5的方块区域，设置为3将会保护7x7的方块区域，以此类推。 这个选项只会在第一个玩家进行服务器时生成。如果服务器没有设置OP，这个选项将会自动禁用。 */</p>
+</blockquote>
+<blockquote>
+<p>max-tick-time=60000<br>/* 设置每个tick花费的最大毫秒数，超过该最大毫秒数看门狗将停止服务器程序并附带上一些信息。 */</p>
+</blockquote>
+<blockquote>
+<p>query.port=25565<br>/* 设置监听服务器的端口号 */</p>
+</blockquote>
+<blockquote>
+<p>generator-settings=<br>/* 本属性质用于自定义超平坦世界的生成。详见<a href="https://minecraft-zh.gamepedia.com/%E8%B6%85%E5%B9%B3%E5%9D%A6%E4%B8%96%E7%95%8C" target="_blank" rel="noopener">超平坦世界</a>和<a href="https://minecraft-zh.gamepedia.com/%E8%87%AA%E5%AE%9A%E4%B9%89" target="_blank" rel="noopener">自定义</a>了解正确的设定及例子。 */</p>
+</blockquote>
+<blockquote>
+<p>force-gamemode=false<br>/* 是否强制玩家以默认游戏模式游玩 */</p>
+</blockquote>
+<blockquote>
+<p>allow-nether=true<br>/* 是否允许玩家前往下界 */</p>
+</blockquote>
+<blockquote>
+<p>enforce-whitelist=false<br>/* 在服务器上强制执行白名单。当启用后，不在白名单中的用户将在服务器重新加载白名单文件后从服务器踢出。 */</p>
+</blockquote>
+<blockquote>
+<p>gamemode=survival<br>/* 游戏模式，包括survival(0)生存模式、creative(1)创造模式、adventure(2)冒险模式（仅在12w22a之后，或正式版1.3之后可用）、spectator(3)旁观模式（仅在14w05a之后，或正式版1.8之后可用） */</p>
+</blockquote>
+<blockquote>
+<p>broadcast-console-to-ops=true</p>
+</blockquote>
+<blockquote>
+<p>enable-query=false<br>/* 是否允许使用GameSpy4协议的服务器监听器。它被用于收集服务器信息 */</p>
+</blockquote>
+<blockquote>
+<p>player-idle-timeout=0<br>/* 玩家n分钟无任何操作将被自动踢出，0为关闭自动踢出 */</p>
+</blockquote>
+<blockquote>
+<p>difficulty=easy<br>/* 定义服务器的游戏难度（例如生物对玩家造成的伤害，饥饿与中毒对玩家的影响方式等），包括和平(peaceful)(0)、简单(easy)(1)、普通(normal)(2)、困难(hard)(3)如果设置了旧的数字ID，则会自动转化为英文的难度名称 */</p>
+</blockquote>
+<blockquote>
+<p>broadcast-rcon-to-ops=true</p>
+</blockquote>
+<blockquote>
+<p><a id="opl">op-permission-level</a>=4<br>/* 设定OP的权限等级<br>1 - OP可以无视重生点保护。<br>2 - OP可以使用单人游戏作弊命令（除了/publish，因为不能在服务器上使用，/debug也是）并使用命令方块。命令方块和领域服服主/管理员有此等级权限。<br>3 - OP可以使用几乎所有多人游戏限定的命令（除第4级专用命令）<br>4 - OP可以使用所有命令，包括/stop、/save-all、/save-on和/save-off。 */</p>
+</blockquote>
+<blockquote>
+<p>pvp=true<br>/* 是否允许玩家互相伤害 */</p>
+</blockquote>
+<blockquote>
+<p>snooper-enabled=false<br>/* 自1.3正式版之后，一旦启用，将允许服务端定期发送统计数据到&lt;<a href="http://snoop.minecraft.net" target="_blank" rel="noopener">http://snoop.minecraft.net</a>. *&gt;/</p>
+</blockquote>
+<blockquote>
+<p>level-type=default<br>/* 地图生成类型，包括<br>DEFAULT - 标准的世界带有丘陵，河谷，海洋等<br>FLAT - 一个没有特色的平坦世界，适合用于建设<br>LARGEBIOMES - 如同预设世界，但所有生态系都更大（仅快照12w19a，或正式版1.3之后可用）<br>AMPLIFIED - 如同预设世界，但世界生成高度提高（仅快照13w36a，或正式版1.7.2之后可用）<br>CUSTOMIZED - 自快照14w21b以来，服务器也支持自定义地形。使用方法是在generator-settings贴上代码。 */</p>
+</blockquote>
+<blockquote>
+<p>hardcore=<br>/* 极限模式(一旦启用，玩家在死后会自动被服务器封禁，进入spectator模式)，会覆写设定的游戏难度 */</p>
+</blockquote>
+<blockquote>
+<p>enable-command-block=false<br>/* 是否启用命令方块 <em>/<br>false<br>max-players=20<br>/</em> 服务器同时能容纳的最大玩家数量，可输入0~2147483647，服务器的OP具有在人满的情况下强行进入服务器的权力，找到在服务器根目录下叫ops.json的文件并打开，设置你要突破人数限制的OP下的bypassesPlayerLimit选项为true即可（默认值为false），这意味着OP将不需要在服务器人满时等待玩家离开再加入，过大的数值会使客户端显示的玩家列表崩坏。 */</p>
+</blockquote>
+<blockquote>
+<p>network-compression-threshold=256<br>/* 默认会允许n-1字节的数据包正常发送, 如果数据包为 n 字节或更大时会进行压缩。 */</p>
+</blockquote>
+<blockquote>
+<p>resource-pack-sha1=<br>/* 资源包的SHA-1值，必须为小写十六进制，建议填写它，这还没有用于验证资源包的完整性，但是它提高了资源包缓存的有效性和可靠性。 */</p>
+</blockquote>
+<blockquote>
+<p>max-world-size=29999984<br>/* 最大世界范围(半径)，比如，1000即为2000x2000方形地图 */</p>
+</blockquote>
+<blockquote>
+<p>function-permission-level=2<br>/* 设置命令的权限等级(1-4)，权限等级2可以使用/reload和/forceload，可以参考<a href="#opl">op-permission-level</a> */</p>
+</blockquote>
+<blockquote>
+<p>rcon.port=25575<br>/* 设置远程访问的端口号 */</p>
+</blockquote>
+<blockquote>
+<p>server-port=25565<br>/* 服务器端口 */</p>
+</blockquote>
+<blockquote>
+<p>server-ip=<br>/* 服务器地址，默认留空即可 */</p>
+</blockquote>
+<blockquote>
+<p>allow-flight=false<br>/* false - 不允许飞行。悬空超过5秒的玩家会被踢出服务器。也会包括使用三叉戟的激流附魔、时间很长的自由落体或是网络卡顿导致的误判。</p>
+</blockquote>
+<blockquote>
+<p>true - 允许飞行。玩家得以使用飞行MOD飞行。 */</p>
+</blockquote>
+<blockquote>
+<p>level-name=world<br>/* 世界的名字(同时也是存放世界文件夹的名字)，更改名字会让服务器尝试加载不同文件夹中的地图 */</p>
+</blockquote>
+<blockquote>
+<p>view-distance=10<br>/*  它决定了服务端的<code>可视距离</code>，设置服务端传送给客户端的数据量，也就是设置玩家各个方向上的区块数量 (是以玩家为中心的半径，不是直径)。 */</p>
+</blockquote>
+<blockquote>
+<p>resource-pack=<br>/* 可输入指向一个资源包的URI。玩家可选择是否使用该资源包。注：下载到的服务器资源包将保存在.minecraft\server-resource-packs下。 */</p>
+</blockquote>
+<blockquote>
+<p>spawn-animals=true<br>/* 是否生成动物 */</p>
+</blockquote>
+<blockquote>
+<p>spawn-monsters=true<br>/* 决定攻击型生物（怪兽）是否可以生成 */</p>
+</blockquote>
+<blockquote>
+<p>spawn-npcs=true<br>/* 是否生成npc */</p>
+</blockquote>
+<blockquote>
+<p>white-list=false<br>/* 服务器的白名单,当启用时，只有白名单上的用户才能连接服务器。白名单主要用于私人服务器，例如相识的朋友等。<br>注 - OP会自动被视为在白名单上。所以无需再将OP加入白名单。<br>false - 不使用白名单。<br>true - 从 whitelist.json 文件加载白名单。 */</p>
+</blockquote>
+<blockquote>
+<p>rcon.password=<br>/* 设置远程访问的密码 */</p>
+</blockquote>
+<blockquote>
+<p>generate-structures=true<br>/* 是否生成建筑(包括村庄等)，注：即使设为 false，地牢和下界要塞仍然会生成 */</p>
+</blockquote>
+<blockquote>
+<p>max-build-height=256<br>/* 玩家能够建造的最大高度。地形生成算法并不会受这个值的影响。 */</p>
+</blockquote>
+<blockquote>
+<p>online-mode=true<br>/* 服务器是否开启在线验证(<code>仅允许正版玩家连接</code>)，谨慎切换，可能导致玩家数据丢失 */</p>
+</blockquote>
+<blockquote>
+<p>level-seed=<br>/* 自定义世界种子 */</p>
+</blockquote>
+<blockquote>
+<p>use-native-transport=true<br>/* 是否使用针对Linux平台的数据包收发优化 */</p>
+</blockquote>
+<blockquote>
+<p>prevent-proxy-connections=false<br>/* 如果服务器发送的和Mojang的验证服务器的ISP/AS不一样,玩家将会被踢出<br>true - 服务器将会禁止玩家使用虚拟专用网络或代理<br>false - 服务器将不会禁止玩家使用虚拟专用网络或代理 */</p>
+</blockquote>
+<blockquote>
+<p>enable-rcon=false<br>/* 是否允许远程访问服务器控制台 */</p>
+</blockquote>
+<blockquote>
+<p>motd=A Minecraft Server<br>/* 玩家在多人游戏服务器列表中看到的服务器信息，显示于名称下方，那些<del>花里胡哨</del>的东西请参考官方的<a href="https://minecraft-zh.gamepedia.com/%E6%A0%B7%E5%BC%8F%E4%BB%A3%E7%A0%81" target="_blank" rel="noopener">样式代码</a> */</p>
+</blockquote>
+<blockquote>
+<p>announce-player-achievements=false<br>/* 玩家获得成就时是否在服务器中进行显示。在1.12之后的版本中，announce-player-achievements属性被移除。如果已经在服务器配置文件中设置了此条属性，则游戏规则announceAdvancements将自动更新，随后从文件中删除此条属性。 */</p>
+</blockquote>
+<h1 id="基岩版服务端配置文件"><a href="#基岩版服务端配置文件" class="headerlink" title="基岩版服务端配置文件"></a>基岩版服务端配置文件</h1><p><del>基岩版的参数，我暂时就不更新了，当然，到时候我忘了的话，可以提醒我一下</del></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 qasdwasd@qq.com </span>
@@ -589,12 +748,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Minecraft服务器 问题汇总</p>
+    <p><span class="copy-title">文章标题:</span>配置Minecraft服务端文件</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="yunying61">yunying61</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-01-14, 13:48:13</p>
-    <p><span class="copy-title">最后更新:</span>2020-01-14, 13:48:13</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/01/14/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" title="Minecraft服务器 问题汇总">http://yoursite.com/2020/01/14/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</a>
+    <p><span class="copy-title">发布时间:</span>2020-01-30, 14:43:07</p>
+    <p><span class="copy-title">最后更新:</span>2020-01-30, 14:43:07</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/01/30/%E9%85%8D%E7%BD%AEMinecraft%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%96%87%E4%BB%B6/" title="配置Minecraft服务端文件">http://yoursite.com/2020/01/30/%E9%85%8D%E7%BD%AEMinecraft%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%96%87%E4%BB%B6/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
