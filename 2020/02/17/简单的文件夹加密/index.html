@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Windows下的Nginx图片服务器搭建 | 星幕·云影的博客 - yunying61</title>
-  <meta name="keywords" content=" 服务器 , Nginx ">
-  <meta name="description" content="Windows下的Nginx图片服务器搭建 | 星幕·云影的博客 - yunying61">
+  <title>简单的文件夹加密 | 星幕·云影的博客 - yunying61</title>
+  <meta name="keywords" content=" 文件夹加密 , 加密 , 文件夹 ">
+  <meta name="description" content="简单的文件夹加密 | 星幕·云影的博客 - yunying61">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="这里为大家推荐一款免费的，可以单独为文件夹设置密码的小程序[Folder-locker]。这是国人开发的一款开源加密小程序，它只有一个功能，就是给文件夹上密码，而且原理非常简单，所以不提供安全保障。项目地址：https:&#x2F;&#x2F;github.com&#x2F;Albert-W&#x2F;Folder-locker Folder-locker本文借鉴自Albert-W, -Folder-locker这是一个小巧的文件上锁软">
 <meta name="keywords" content="文件夹加密,加密,文件夹">
@@ -661,9 +661,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Windows下的Nginx图片服务器搭建" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-简单的文件夹加密" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Windows下的Nginx图片服务器搭建</h1>
+        <h1 class="article-title">简单的文件夹加密</h1>
     
     <div class="article-meta">
         
@@ -671,27 +671,27 @@
         
         <span class="book">
             
-                <a  data-rel="服务器">服务器</a>/
+                <a  data-rel="IT">IT</a>/
             
-                <a  data-rel="搭建">搭建</a>/
-            
-                <a  data-rel="网络">网络</a>
+                <a  data-rel="技术">技术</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a class="color4">服务器</a>
+            <a class="color1">文件夹加密</a>
             
-            <a class="color1">Nginx</a>
+            <a class="color3">加密</a>
+            
+            <a class="color4">文件夹</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-01-13 19:18:26'>2020-01-13 19:18</time>
+        创建时间:<time class="date" title='更新时间: 2020-02-17 14:16:24'>2020-02-17 14:16</time>
         
     </div>
     <div class="article-meta">
@@ -713,7 +713,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Windows下的Nginx图片服务器搭建"><span class="toc-text">Windows下的Nginx图片服务器搭建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Nginx"><span class="toc-text">Nginx</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#简要步骤"><span class="toc-text">简要步骤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#目录"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装Nginx并启动"><span class="toc-text">安装Nginx并启动</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置文件链接"><span class="toc-text">配置文件链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Nginx常用命令"><span class="toc-text">Nginx常用命令</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Folder-locker"><span class="toc-text">Folder-locker</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#功能展示"><span class="toc-text">功能展示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目介绍"><span class="toc-text">项目介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件使用"><span class="toc-text">软件使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#找回密码"><span class="toc-text">找回密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件原理"><span class="toc-text">软件原理</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -729,67 +729,48 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Windows下的Nginx图片服务器搭建"><a href="#Windows下的Nginx图片服务器搭建" class="headerlink" title="Windows下的Nginx图片服务器搭建"></a>Windows下的Nginx图片服务器搭建</h1><p>其实现在网上的图片托管服务也是非常成熟了，本人之前也是用了一个月的七牛云的对象存储服务来进行图片托管。当然也只是用了一个月而已，因为它的测试域名只能用一个月，一个月后你就要绑定一个自己的域名。绑域名简单啊，可是七牛云坑的就是要绑一个已经备案的域名，因为本人当时域名备案受限(也是一把泪啊，当然还是鼓励大家域名备案的)，所以让七牛云进行图片托管的路也算是废了(其实七牛云还蛮好用的)。<br>于是乎，我为了解决这个图片托管的问题，找遍了各种方法，到头来想了想，还是放自己服务器里托管更方便，所以就找到了用Nginx来搭建图片服务器。<br>以上是我的吐槽，以及图片托管的一些经历。下面废话不多说，进入正题。</p>
-<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><ul>
-<li>Nginx是什么？<br>Nginx是一个开源的Web服务器，同时Nginx也提供了反向代理和负载均衡的功能。<br>Nginx通常作为负载均衡器暴露在外网接受用户请求，同时也使用其反向代理的功能，将用户的请求转发到实际提供服务的内网服务器。</li>
-<li>Windows什么情况下需要Nginx？<br>通常来说Windows下IIS就够用了，支持 .NET、ASP、PHP等等，不过如果你需要做负载均衡那你就需要Nginx，或者说你在一台服务器上，部署了Apache、IIS、Tomcat等多个Web服务器，这时候把80端口或443端口给Nginx在合适不过了。<br>当然，作为商业公司来说，通常不会有以上情况，但是如果你是个草根站长。或者说你想把你的Windows开发机作为服务器对外提供服务，那把你的Windows装上Nginx再合适不过了。</li>
+        <p>这里为大家推荐一款免费的，可以单独为文件夹设置密码的小程序[Folder-locker]。这是国人开发的一款开源加密小程序，它只有一个功能，就是给文件夹上密码，而且原理非常简单，所以不提供<abbr title="懂了原理，很简单就能解开">安全保障</abbr>。项目地址：<a href="https://github.com/Albert-W/Folder-locker" target="_blank" rel="noopener">https://github.com/Albert-W/Folder-locker</a></p>
+<h1 id="Folder-locker"><a href="#Folder-locker" class="headerlink" title="Folder-locker"></a>Folder-locker</h1><p>本文借鉴自<blockquote><footer><strong>Albert-W, -</strong><cite><a href="https://github.com/Albert-W/Folder-locker" target="_blank" rel="noopener">Folder-locker</a></cite></footer></blockquote><br>这是一个小巧的文件上锁软件，没有压缩和加密过程，方便快捷。</p>
+<h2 id="功能展示"><a href="#功能展示" class="headerlink" title="功能展示"></a>功能展示</h2><p><img src="https://img-61.oss-cn-shanghai.aliyuncs.com/img/Folder-locker/locker.gif" alt=""><br>在想加密的文件夹上，右键则可呼出加密面板，输入两次密码确认加密。</p>
+<p>在已加密的文件夹上，右键，输入密码，则取消加密</p>
+<hr>
+<h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h2><p>项目分了两个目录：</p>
+<ul>
+<li>DButility 用于通过轻量极数据库SQLite 保存密码。<ul>
+<li>通过Md5算法对密码加密，通过SQL参数防止SQL注入。</li>
 </ul>
-<h1 id="简要步骤"><a href="#简要步骤" class="headerlink" title="简要步骤"></a>简要步骤</h1><ol>
-<li>安装Nginx并启动</li>
-<li>配置地址链接</li>
-<li>然后就可以用了</li>
-</ol>
-<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h1 id="安装Nginx并启动"><a href="#安装Nginx并启动" class="headerlink" title="安装Nginx并启动"></a>安装Nginx并启动</h1><ol>
-<li>下载nginx，下载地址：<a href="http://nginx.org/" target="_blank" rel="noopener">http://nginx.org/</a>，以<a href="http://nginx.org/download/nginx-1.16.1.zip" target="_blank" rel="noopener">nginx-1.16.1.zip</a>为例，下载下来后，解压到如：C:\nginx\nginx-1.16.1</li>
-<li>启动nginx，双击文件夹里的nginx.exe，双击后会有一个黑色的弹窗一闪而过</li>
-<li>检查nginx是否启动成功<br>直接在浏览器地址栏输入网址 <a href="http://localhost:80" target="_blank" rel="noopener">http://localhost:80</a>，回车，出现以下页面说明启动成功<br><img src="https://img-61.oss-cn-shanghai.aliyuncs.com/img/Nginx/example.jpg" alt="nginx"><br>也可以在cmd命令窗口输入命令 tasklist /fi “imagename eq nginx.exe” ，出现结果说明启动成功<br>nginx的配置文件是conf目录下的nginx.conf，默认配置的nginx监听的端口为80，如果80端口被占用可以修改为未被占用的端口即可<br>检查80端口是否被占用的命令是： <code>netstat -ano | findstr 0.0.0.0:80</code> 或 <code>netstat -ano | findstr &quot;80&quot;</code><blockquote>
-<p>这里建议大家改一下端口，比如我的就改成88端口了，因为80端口是比较频繁被访问的端口，我们的图片服务器就另用其他的端口比较好。而且也能避免某些冲突和问题。</p>
-</blockquote>
 </li>
-<li>关闭nginx<br>如果使用cmd命令窗口启动nginx，关闭cmd窗口是不能结束nginx进程的，可使用两种方法关闭nginx<br>(1)输入nginx命令  nginx -s stop(快速停止nginx)  或  nginx -s quit(完整有序的停止nginx)<br>(2)使用taskkill   taskkill /f /t /im nginx.exe<blockquote>
-<p>这里要注意的是，每次重启电脑以后，Nginx服务器都会关闭，所以需要自己手动打开，当然也可以设置计划任务让它自动打开。</p>
-</blockquote>
-</li>
-</ol>
+<li>folderLocker 用于实现业务逻辑。</li>
+</ul>
+<h2 id="软件使用"><a href="#软件使用" class="headerlink" title="软件使用"></a>软件使用</h2><ul>
+<li>下载软件安装包 Folder Locker.exe</li>
+<li>进行安装，不建议安装在C盘，容易数据库丢失，影响解密。</li>
+<li>可以右键点击<code>Folder locker</code>使用，也可以打开软件主页面使用。</li>
+</ul>
 <blockquote>
-<p>当我们修改了nginx的配置文件nginx.conf 时，不需要关闭nginx后重新启动nginx，只需要执行命令<code>nginx -s reload</code>即可让改动生效</p>
+<p>加密过程，右键需要加密的文件夹 – Folder locker – 输入密码– lock 即可；<br><img src="https://img-61.oss-cn-shanghai.aliyuncs.com/img/Folder-locker/locked.gif" alt=""><br>加密后文件夹图标会变成锁，无法双击打开</p>
 </blockquote>
-<h1 id="配置文件链接"><a href="#配置文件链接" class="headerlink" title="配置文件链接"></a>配置文件链接</h1><p>如果有配置FTP服务器，那可以在FTP服务器的根目录下创建一个img文件夹；没有FTP服务器就随便创建在一个文件夹。<br>这里，我就在nginx目录下的html创建img文件夹</p>
-<p>接下来，打开Nginx的配置文件(nginx.conf)，路径：..\nginx-1.17.7\conf\nginx.conf  ，没有其他软件打开的话，就用记事本也可以打开。</p>
-<p>添加两行代码<br><img src="https://img-61.oss-cn-shanghai.aliyuncs.com/img/Nginx/conf.jpg" alt="conf配置"></p>
 <blockquote>
-<p>这里可以看到，我用的端口是88端口，然后再location / {..}后面空一行，添加如图代码，稍微注意一下格式，涂红处的路径就是你改成创建的img文件夹。</p>
+<p>解密过程，右键已加密文件夹 –  Folder locker – 输入密码– unlock 即可；<br><img src="https://img-61.oss-cn-shanghai.aliyuncs.com/img/Folder-locker/unlock.gif" alt=""></p>
 </blockquote>
-<p>访问图片的地址是：<a href="http://localhost:88/img/1.jpg" target="_blank" rel="noopener">http://localhost:88/img/1.jpg</a></p>
+<p>注意事项：<br>整个过程没有任何数据上传，你的密码会通过Md5算法加密<br>密码保存在本机数据库，没有上传任何服务器。<br>删除软件会同时删除数据库，因而删除密码，导致密码丢失。</p>
+<h2 id="找回密码"><a href="#找回密码" class="headerlink" title="找回密码"></a>找回密码</h2><blockquote>
+<p>如果忘记密码或者密码遗失，文件被锁，可以通过命令行工具重命名：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd C:\Users\91991\Music</span><br><span class="line">ren &quot;Test.&#123;2559a1f2-21d7-11d4-bdaf-00c04f60b9f0&#125;&quot; &quot;Test1&quot;</span><br></pre></td></tr></table></figure>
+
+<p>先cd到你的加密文件夹地址，再输入ren “<code>你的文件夹名称</code>.{2559a1f2-21d7-11d4-bdaf-00c04f60b9f0}” “<code>解密后的文件夹名称</code>“</p>
 <blockquote>
-<p>这里，我看网上的教程说可以直接访问<a href="http://localhost:88/img/" target="_blank" rel="noopener">http://localhost:88/img/</a> 访问到你的文件(就像访问FTP服务器那样的界面)，但是我自己弄的时候并不能用，会显示(无法访问此网站找不到 x.x.x.x 的服务器 IP 地址)。我研究了一下，也找不出原因，如果你知道的话，请务必告诉我，谢谢。</p>
+<p>这里在你输入文件夹前几个字的时候就可以按tab键自动补全接下来的代码。</p>
 </blockquote>
-<h1 id="Nginx常用命令"><a href="#Nginx常用命令" class="headerlink" title="Nginx常用命令"></a>Nginx常用命令</h1><table border="1px" align="center">
-    <tr>
-        <th>命令</th><th>说明</th>
-    </tr>
-    <tr>
-        <td>nginx -h</td><td>查看帮助信息</td>
-    </tr>
-    <tr>
-        <td>nginx -v</td><td>查看Nginx版本</td>
-    </tr>
-    <tr>
-        <td>nginx -s stop</td><td>停止Nginx</td>
-    </tr>
-    <tr>
-        <td>nginx -s quit</td><td>优雅的停止Nginx（处理完正在进行中请求后停止）</td>
-    </tr>
-    <tr>
-        <td>nginx -s reload</td><td>重新加载配置，并优雅的重启进程</td>
-    </tr>
-    <tr>
-        <td>nginx -s reopen</td><td>重启日志文件</td>
-    </tr>
-</table>
+<p><img src="https://img-61.oss-cn-shanghai.aliyuncs.com/img/Folder-locker/wjmm.gif" alt=""></p>
+<p>或者把文件复制出来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd C:\Users\91991\Music</span><br><span class="line">cd &apos;.\Test.&#123;2559a1f2-21d7-11d4-bdaf-00c04f60b9f0&#125;\&apos;</span><br><span class="line">ls</span><br><span class="line">mv .\* ..\Test1\</span><br></pre></td></tr></table></figure>
 
-
-
+<h2 id="软件原理"><a href="#软件原理" class="headerlink" title="软件原理"></a>软件原理</h2><p>这个程序原理非常简单，就是利用 Windows 的注册表修改了文件夹属性，使其不能直接已文件夹的形式打开，就像「上帝模式」一样，小程序并没有对文件夹内的文件做任何修改，没有压缩和加密过程，所以速度非常快。</p>
+<p>但也正因为其简单，知道原理的话不需要程序也能解密。</p>
+<p>正因如此，它的安全系数不高，不适用来加密非常重要的机密文件，但保护普通用户的小秘密应该是搓搓有余的。</p>
+<p>目前这款软件好像在 Windows 2004 版本上失效了，期待作者继续更新。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 qasdwasd@qq.com </span>
@@ -803,12 +784,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Windows下的Nginx图片服务器搭建</p>
+    <p><span class="copy-title">文章标题:</span>简单的文件夹加密</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="yunying61">yunying61</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-01-13, 19:18:26</p>
-    <p><span class="copy-title">最后更新:</span>2020-01-13, 19:18:26</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/01/13/Windows%E4%B8%8B%E7%9A%84Nginx%E5%9B%BE%E7%89%87%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/" title="Windows下的Nginx图片服务器搭建">http://yoursite.com/2020/01/13/Windows%E4%B8%8B%E7%9A%84Nginx%E5%9B%BE%E7%89%87%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/</a>
+    <p><span class="copy-title">发布时间:</span>2020-02-17, 14:16:24</p>
+    <p><span class="copy-title">最后更新:</span>2020-02-17, 14:16:24</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/17/%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8A%A0%E5%AF%86/" title="简单的文件夹加密">http://yoursite.com/2020/02/17/%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8A%A0%E5%AF%86/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
