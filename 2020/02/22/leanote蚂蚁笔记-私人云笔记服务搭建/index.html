@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>leanote蚂蚁笔记 私人云笔记服务搭建 | 星幕·云影的博客 - yunying61</title>
+  <meta name="keywords" content=" 笔记 , leanote , 蚂蚁笔记 , 搭建 ">
+  <meta name="description" content="leanote蚂蚁笔记 私人云笔记服务搭建 | 星幕·云影的博客 - yunying61">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="在右键菜单中添加‘打开cmd命令’对于有些操作，cmd命令的使用频率也是很高的，而且还有很多的操作需要进入指定的文件夹目录，这就让人非常不爽了:anger:。毕竟我们不希望每次都要输入一长串命令，只是为了进入一个文件夹而已，所以在右键中添加一个“打开cmd的命令”是解决问题的一个好方法:sunglasses:。 操作 新建一个文本文档，打开编辑，输入下面的代码，保存为.reg的文件，并运行  12">
+<meta name="keywords" content="cmd,右键菜单,Windows,命令提示符">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Windows右键菜单中添加‘打开cmd命令’">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;23&#x2F;%E5%9C%A8Windows%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%89%93%E5%BC%80cmd%E5%91%BD%E4%BB%A4&#x2F;index.html">
+<meta property="og:site_name" content="星幕·云影的博客 - yunying61">
+<meta property="og:description" content="在右键菜单中添加‘打开cmd命令’对于有些操作，cmd命令的使用频率也是很高的，而且还有很多的操作需要进入指定的文件夹目录，这就让人非常不爽了:anger:。毕竟我们不希望每次都要输入一长串命令，只是为了进入一个文件夹而已，所以在右键中添加一个“打开cmd的命令”是解决问题的一个好方法:sunglasses:。 操作 新建一个文本文档，打开编辑，输入下面的代码，保存为.reg的文件，并运行  12">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-02-23T08:45:53.000Z">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/Noctis.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/Noctis.jpg" />
+</a>
+<div class="author">
+    <span>yunying61</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/yunying61" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/5119152507" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/eecbdf80a551b0358b6882889f026429" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="csdn" href="https://me.csdn.net/blog/weixin_45385155" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-csdn"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:yunying61@yunying61.club" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=774043568&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=1326412238" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+<a class="more-menus">更多菜单</a>
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(29)</small></div></li>
+    
+        
+            
+            <li><div data-rel="笔记"><i class="fold iconfont icon-right"></i>笔记<small>(6)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="激活">激活<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="未分类">未分类<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="服务器"><i class="fold iconfont icon-right"></i>服务器<small>(5)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="搭建">搭建<small>(5)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="IT"><i class="fold iconfont icon-right"></i>IT<small>(3)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="技术">技术<small>(3)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="应用"><i class="fold iconfont icon-right"></i>应用<small>(6)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="程序">程序<small>(5)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技巧">技巧<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="Minecraft">Minecraft<small>(4)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="搭建与配置">搭建与配置<small>(7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="日记">日记<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="测试区">测试区<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="网络">网络<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="https://github.com/yunying61">github</a>
+    
+    </div>
+    <div><a class="about  hasFriend  " target="_blank" href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="29">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="https://www.codesheep.cn/">codesheep</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color5">hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">yunying61</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">HTML</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">网页</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">C语言</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">FTP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">服务器</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">Minecraft</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">我的世界</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">cmd</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">mklink</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">windows</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Nginx</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">CSDN</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">环境搭建</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">配置文件</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">日记</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Navicat Premium</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">激活</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">笔记</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">重要</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">测试</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">试验</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">文件夹加密</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">加密</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">文件夹</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MongoDB</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">leanote</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">蚂蚁笔记</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">搭建</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">右键菜单</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">Windows</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">命令提示符</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">markdown</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="笔记 "
+           href="/2019/12/01/hexo-note/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="hexo-note(hexo的笔记)">hexo-note(hexo的笔记)</span>
+            <span class="post-date" title="2019-12-01 15:03:07">2019/12/01</span>
+        </a>
+        
+        <a  class="未分类 "
+           href="/2019/12/01/%E6%98%9F%E5%B9%95%C2%B7%E4%BA%91%E5%BD%B1%E7%9A%84%E7%BD%91%E9%A1%B5%E9%93%BE%E6%8E%A5%E5%BA%93/"
+           data-tag="yunying61,HTML,网页"
+           data-author="" >
+            <span class="post-title" title="星幕·云影的网页链接库">星幕·云影的网页链接库</span>
+            <span class="post-date" title="2019-12-01 17:09:18">2019/12/01</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2019/12/05/C%E8%AF%AD%E8%A8%80-note/"
+           data-tag="C语言"
+           data-author="" >
+            <span class="post-title" title="C - note（C语言的笔记）">C - note（C语言的笔记）</span>
+            <span class="post-date" title="2019-12-05 19:41:43">2019/12/05</span>
+        </a>
+        
+        <a  class="服务器 搭建 搭建与配置 网络 "
+           href="/2019/12/14/FTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"
+           data-tag="FTP,服务器"
+           data-author="" >
+            <span class="post-title" title="FTP服务器搭建">FTP服务器搭建</span>
+            <span class="post-date" title="2019-12-14 15:34:19">2019/12/14</span>
+        </a>
+        
+        <a  class="服务器 搭建 Minecraft 搭建与配置 "
+           href="/2020/01/10/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"
+           data-tag="服务器,Minecraft,我的世界"
+           data-author="" >
+            <span class="post-title" title="Minecraft服务器搭建">Minecraft服务器搭建</span>
+            <span class="post-date" title="2020-01-10 13:47:38">2020/01/10</span>
+        </a>
+        
+        <a  class="IT 技术 "
+           href="/2020/01/01/Windows%E4%B8%8Bmklink%E4%BD%BF%E7%94%A8/"
+           data-tag="cmd,mklink,windows"
+           data-author="" >
+            <span class="post-title" title="Windows下mklink使用">Windows下mklink使用</span>
+            <span class="post-date" title="2020-01-01 10:51:39">2020/01/01</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/01/14/C%E8%AF%AD%E8%A8%80-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C语言 问题汇总">C语言 问题汇总</span>
+            <span class="post-date" title="2020-01-14 13:49:02">2020/01/14</span>
+        </a>
+        
+        <a  class="服务器 搭建 应用 搭建与配置 程序 网络 "
+           href="/2020/01/13/Windows%E4%B8%8B%E7%9A%84Nginx%E5%9B%BE%E7%89%87%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"
+           data-tag="服务器,Nginx"
+           data-author="" >
+            <span class="post-title" title="Windows下的Nginx图片服务器搭建">Windows下的Nginx图片服务器搭建</span>
+            <span class="post-date" title="2020-01-13 19:18:26">2020/01/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/01/10/%E6%9C%89%E5%85%B3%E5%9F%9F%E5%90%8D%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="有关域名的一些事">有关域名的一些事</span>
+            <span class="post-date" title="2020-01-10 15:46:56">2020/01/10</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/01/14/Nginx-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Nginx 问题汇总">Nginx 问题汇总</span>
+            <span class="post-date" title="2020-01-14 13:47:39">2020/01/14</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/01/14/FTP%E6%9C%8D%E5%8A%A1%E5%99%A8-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FTP服务器 问题汇总">FTP服务器 问题汇总</span>
+            <span class="post-date" title="2020-01-14 13:48:36">2020/01/14</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/01/14/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Minecraft服务器 问题汇总">Minecraft服务器 问题汇总</span>
+            <span class="post-date" title="2020-01-14 13:48:13">2020/01/14</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/01/18/CSDN%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%A0%BC%E5%BC%8F/"
+           data-tag="CSDN"
+           data-author="" >
+            <span class="post-title" title="CSDN的博客格式">CSDN的博客格式</span>
+            <span class="post-date" title="2020-01-18 12:20:00">2020/01/18</span>
+        </a>
+        
+        <a  class="Minecraft 搭建与配置 "
+           href="/2020/01/26/%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83/"
+           data-tag="java,环境搭建"
+           data-author="" >
+            <span class="post-title" title="配置Java环境">配置Java环境</span>
+            <span class="post-date" title="2020-01-26 17:30:28">2020/01/26</span>
+        </a>
+        
+        <a  class="服务器 搭建 Minecraft 搭建与配置 "
+           href="/2020/01/30/%E9%85%8D%E7%BD%AEMinecraft%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%96%87%E4%BB%B6/"
+           data-tag="服务器,Minecraft,我的世界,配置文件"
+           data-author="" >
+            <span class="post-title" title="配置Minecraft服务端文件">配置Minecraft服务端文件</span>
+            <span class="post-date" title="2020-01-30 14:43:07">2020/01/30</span>
+        </a>
+        
+        <a  class="Minecraft "
+           href="/2020/01/31/Minecraft-Mod%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"
+           data-tag="服务器,Minecraft,我的世界"
+           data-author="" >
+            <span class="post-title" title="Minecraft Mod安装教程">Minecraft Mod安装教程</span>
+            <span class="post-date" title="2020-01-31 15:45:44">2020/01/31</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/02/07/FTP%E7%AB%99%E7%82%B9%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80-%E7%94%A8%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FTP站点快速打开(用资源管理器)">FTP站点快速打开(用资源管理器)</span>
+            <span class="post-date" title="2020-02-07 12:25:35">2020/02/07</span>
+        </a>
+        
+        <a  class="日记 "
+           href="/2020/02/11/%E5%85%A5%E5%9D%91%E6%97%A5%E8%AE%B0-%E6%AD%A3%E5%BC%8F%E5%BC%80%E5%A7%8B%E7%8E%A9Linux/"
+           data-tag="日记"
+           data-author="" >
+            <span class="post-title" title="入坑日记-正式开始玩Linux">入坑日记-正式开始玩Linux</span>
+            <span class="post-date" title="2020-02-11 15:03:40">2020/02/11</span>
+        </a>
+        
+        <a  class="笔记 应用 程序 激活 "
+           href="/2020/02/16/Navicat-Premium15%E6%BF%80%E6%B4%BB%E8%BF%87%E7%A8%8B/"
+           data-tag="Navicat Premium,激活"
+           data-author="" >
+            <span class="post-title" title="Navicat Premium 15激活过程">Navicat Premium 15激活过程</span>
+            <span class="post-date" title="2020-02-16 16:54:54">2020/02/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/02/16/%E5%AF%B9%E5%9B%BE%E7%89%87%E8%BF%9B%E8%A1%8C%E5%BC%95%E7%94%A8%E7%9A%84%E6%80%BB%E7%BB%93/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="对图片进行引用的总结">对图片进行引用的总结</span>
+            <span class="post-date" title="2020-02-16 22:32:29">2020/02/16</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/02/16/%E8%A6%81%E5%BC%95%E8%B5%B7%E9%87%8D%E8%A7%86%E7%9A%84%E6%96%B9%E6%96%B9%E9%9D%A2%E9%9D%A2/"
+           data-tag="日记,笔记,重要"
+           data-author="" >
+            <span class="post-title" title="要引起重视的方方面面">要引起重视的方方面面</span>
+            <span class="post-date" title="2020-02-16 22:10:59">2020/02/16</span>
+        </a>
+        
+        <a  class="测试区 "
+           href="/2020/02/16/%E8%AF%95%E9%AA%8C%E7%BB%84-1/"
+           data-tag="测试,试验"
+           data-author="" >
+            <span class="post-title" title="试验组-1">试验组-1</span>
+            <span class="post-date" title="2020-02-16 21:40:41">2020/02/16</span>
+        </a>
+        
+        <a  class="IT 应用 技术 程序 "
+           href="/2020/02/17/%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8A%A0%E5%AF%86/"
+           data-tag="文件夹加密,加密,文件夹"
+           data-author="" >
+            <span class="post-title" title="简单的文件夹加密">简单的文件夹加密</span>
+            <span class="post-date" title="2020-02-17 14:16:24">2020/02/17</span>
+        </a>
+        
+        <a  class="应用 搭建与配置 程序 "
+           href="/2020/02/22/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"
+           data-tag="MongoDB,数据库"
+           data-author="" >
+            <span class="post-title" title="MongoDB数据库 安装与配置">MongoDB数据库 安装与配置</span>
+            <span class="post-date" title="2020-02-22 21:53:49">2020/02/22</span>
+        </a>
+        
+        <a  class="服务器 搭建 应用 搭建与配置 程序 "
+           href="/2020/02/22/leanote%E8%9A%82%E8%9A%81%E7%AC%94%E8%AE%B0-%E7%A7%81%E4%BA%BA%E4%BA%91%E7%AC%94%E8%AE%B0%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/"
+           data-tag="笔记,leanote,蚂蚁笔记,搭建"
+           data-author="" >
+            <span class="post-title" title="leanote蚂蚁笔记 私人云笔记服务搭建">leanote蚂蚁笔记 私人云笔记服务搭建</span>
+            <span class="post-date" title="2020-02-22 21:53:24">2020/02/22</span>
+        </a>
+        
+        <a  class="IT 应用 技术 技巧 "
+           href="/2020/02/23/%E5%9C%A8Windows%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%89%93%E5%BC%80cmd%E5%91%BD%E4%BB%A4/"
+           data-tag="cmd,右键菜单,Windows,命令提示符"
+           data-author="" >
+            <span class="post-title" title="在Windows右键菜单中添加‘打开cmd命令’">在Windows右键菜单中添加‘打开cmd命令’</span>
+            <span class="post-date" title="2020-02-23 16:45:53">2020/02/23</span>
+        </a>
+        
+        <a  class="未分类 "
+           href="/2019/11/24/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-yun/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="我的第一篇博客-yun">我的第一篇博客-yun</span>
+            <span class="post-date" title="2019-11-24 20:36:57">2019/11/24</span>
+        </a>
+        
+        <a  class="未分类 "
+           href="/2020/01/14/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2020-01-14 16:58:47">2020/01/14</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2019/11/30/markdown/"
+           data-tag="markdown"
+           data-author="" >
+            <span class="post-title" title="markdown的笔记（代码运用)">markdown的笔记（代码运用)</span>
+            <span class="post-date" title="2019-11-30 17:33:10">2019/11/30</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-leanote蚂蚁笔记-私人云笔记服务搭建" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">leanote蚂蚁笔记 私人云笔记服务搭建</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="服务器">服务器</a>/
+            
+                <a  data-rel="搭建">搭建</a>/
+            
+                <a  data-rel="应用">应用</a>/
+            
+                <a  data-rel="搭建与配置">搭建与配置</a>/
+            
+                <a  data-rel="程序">程序</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color3">笔记</a>
+            
+            <a class="color3">leanote</a>
+            
+            <a class="color5">蚂蚁笔记</a>
+            
+            <a class="color3">搭建</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-02-22 21:53:24'>2020-02-22 21:53</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#leanote蚂蚁笔记"><span class="toc-text">leanote蚂蚁笔记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#下载准备"><span class="toc-text">下载准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装与配置（windows版）"><span class="toc-text">安装与配置（windows版）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#测试mongodb安装"><span class="toc-text">测试mongodb安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#导入初始数据"><span class="toc-text">导入初始数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为MongoDB下的leanote数据库添加用户"><span class="toc-text">为MongoDB下的leanote数据库添加用户</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#运行leanote"><span class="toc-text">运行leanote</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#绑定域名"><span class="toc-text">绑定域名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装与配置（Linux版）"><span class="toc-text">安装与配置（Linux版）</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="leanote蚂蚁笔记"><a href="#leanote蚂蚁笔记" class="headerlink" title="leanote蚂蚁笔记"></a>leanote蚂蚁笔记</h1><p>目前在知识管理/笔记类软件领域有强大的印象笔记 (Evernote)、微软（OneNote）、国产的（为知笔记）、（有道云笔记）以及（讯飞语记）等都是非常优秀的产品，但总有一部分人会觉得“把自己的笔记放在别人兜里，心里不踏实”。<br>我一开始用的也是讯飞语记，刚开始还不懂，只是被它的语音识别和云同步所吸引。后来懂的越来越多，愈发觉得自己的一些笔记还是不要放别人的数据库里。碰巧，在阿里云的一篇学习文章里，我发现了leanote，于是乎我也就进入了私人云笔记时代！</p>
+<p>个人对leanote的理解：<br>简约、免费、开源、支持 Markdown 语法，支持程序代码高亮、笔记历史记录、支持笔记分享协作、将笔记发布成博客、云同步、多终端兼容(Windows、Mac、iOS、Linux、Android)，最关键的：搭建私人云笔记。</p>
+<p>介绍：<br>Leanote, 不只是笔记!<br>Leanote 蚂蚁笔记是一款国产的在线网页版云笔记软件，集知识管理、笔记、分享、博客功能于一身，界面简约但功能不简单！</p>
+<p>该项目采用 Golang+MongoDB 开发，现已完全开源并能免费使用。普通用户可以直接使用 Leanote 提供的公共服务，也可以自行搭建属于自己或公司局域网内的私有云笔记平台。 </p>
+<p>论在工作还是生活方面，如果觉得印象笔记或目前你使用的笔记软件的编辑器不能满足你的需求，不能很好地贴代码片段、图片不能缩放、不能写 Markdown？或者希望能将知识共享出去，能将笔记快速变成博客文章，而不用特意去搭建维护一个 WordPress？又或者你希望<code>拥有一个私有的笔记平台</code>，那么不妨试试 Leaonte 吧，相信你会发现这是一个相当不错的开源项目…</p>
+<p><strong>特性</strong></p>
+<ul>
+<li>高效笔记：Leanote 有易操作的界面, 包含一款富文本编辑器和Markdown编辑器，让您的笔记记录更轻松和高效。对高阶用户，我们还提供Vim 和Emacs 编辑模式，助推你的写作速度更上层楼。</li>
+<li>知识管理: Leanote 灵活而强大的“笔记本-笔记-标签”系统，让它成为你个人知识管理的利器。</li>
+<li>分享: 你可以通过Leanote同好友分享知识、想法和经历, 邀请好友加入你的笔记簿，通过云端交流信息。</li>
+<li>协作: Leanote协助你与同事之间相互协作，激荡新思路，随时随地头脑风暴。</li>
+<li>博客: Leanote也可以作为你的个人博客, 把你的知识传播的更远!</li>
+</ul>
+<p><strong>其它特性</strong></p>
+<ul>
+<li>支持Markdown编辑</li>
+<li>写作模式</li>
+<li>Vim 及 Emacs 编辑模式</li>
+<li>支持PDF导出</li>
+<li>支持批量操作</li>
+<li>博客自定义主题, 实现高度定制化</li>
+</ul>
+<h1 id="下载准备"><a href="#下载准备" class="headerlink" title="下载准备"></a>下载准备</h1><p>搭建leanote需要，<code>leanote</code>本体和<code>MongoDB</code>数据库支持。<br>首先，是<a href="https://leanote.com/" target="_blank" rel="noopener">leanote官方</a>的<a href="http://leanote.org/#download" target="_blank" rel="noopener">下载地址</a>，<a href="https://www.mongodb.com/" target="_blank" rel="noopener">MongoDB官方</a>的<a href="https://www.mongodb.com/download-center/community" target="_blank" rel="noopener">下载地址</a>，用这个可以马上使用到最新的产品。<br>然后，如果大家不想那么麻烦的去官方那里下载，我这里也提供下载链接，当然，<abbr title="2020年2月23日版">版本</abbr>我就不会持续更新了。<br><strong>Leanote</strong>：<a href="https://img-61.oss-cn-shanghai.aliyuncs.com/file/leanote-windows-amd64-v2.6.1.bin.tar.gz" target="_blank" rel="noopener">Windows v2.6.1</a>，<a href="https://img-61.oss-cn-shanghai.aliyuncs.com/file/leanote-linux-amd64-v2.6.1.bin.tar.gz" target="_blank" rel="noopener">Linux v2.6.1</a>     <strong>MongoDB</strong>：<a href="https://img-61.oss-cn-shanghai.aliyuncs.com/file/mongodb-win32-x86_64-2012plus-4.2.3-signed.msi" target="_blank" rel="noopener">Windows64位 4.2.3</a>，<a href="https://img-61.oss-cn-shanghai.aliyuncs.com/file/mongodb-src-r4.2.3.tar.gz" target="_blank" rel="noopener">Linux 4.2.3</a></p>
+<h1 id="安装与配置（windows版）"><a href="#安装与配置（windows版）" class="headerlink" title="安装与配置（windows版）"></a>安装与配置（windows版）</h1><p>1、将下载的文件里面的leanote-windows-amd64-v2.6.1.bin.tar.gz文件解压到C盘（本文默认解压到了 C:\leanote）。<br>2、运行mongodb-win32-x86_64-2012plus-4.2.3-signed.msi进行安装（本文默认解压到了 C:\MongoDB\Server\4.2）。<br>接下来的MongoDB的配置<strong>极其麻烦</strong>，这里我放到另一篇文章里，<a href="/2020/02/22/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" title="MongoDB 安装与配置">MongoDB 安装与配置</a></p>
+<hr>
+<h2 id="测试mongodb安装"><a href="#测试mongodb安装" class="headerlink" title="测试mongodb安装"></a>测试mongodb安装</h2><p>打开cmd， <code>cd</code> 进入C:\MongoDB\Server\4.2\bin 目录输入:</p>
+<blockquote>
+<p>mongo</p>
+</blockquote>
+<p>行首出现&gt; 表示进入mongo 的交互程序。此时输入：</p>
+<blockquote>
+<p>show dbs</p>
+</blockquote>
+<blockquote>
+<p>出现<br>show dbs<br>admin    0.000GB<br>config   0.000GB<br>local    0.000GB<br>即安装成功</p>
+</blockquote>
+<p>这个窗口可以先不要关</p>
+<h2 id="导入初始数据"><a href="#导入初始数据" class="headerlink" title="导入初始数据"></a>导入初始数据</h2><p>打开新cmd， <code>cd</code> 进入C:\MongoDB\Server\4.2\bin，复制并运行以下命令</p>
+<blockquote>
+<p>mongorestore -h localhost -d leanote –dir C:\leanote\mongodb_backup\leanote_install_data</p>
+</blockquote>
+<p>出现  “499 document(s) restored successfully. 0 document(s) failed to restore.”  表示结束，这样就完成了数据的导入</p>
+<p>当你再次使用show dbs命令时就会显示</p>
+<blockquote>
+<p>show dbs<br>admin    0.000GB<br>config   0.000GB<br>leanote  0.002GB<br>local    0.000GB</p>
+</blockquote>
+<h2 id="为MongoDB下的leanote数据库添加用户"><a href="#为MongoDB下的leanote数据库添加用户" class="headerlink" title="为MongoDB下的leanote数据库添加用户"></a>为MongoDB下的leanote数据库添加用户</h2><p>像MySQL一样MongoDB也有root用户, mongodb初始是没有用户的, 这样很不安全, 所以要为leanote数据库新建一个用户来连接leanote数据库(注意, 并不是为leanote的表users里新建用户, 而是新建一个连接leanote数据库的用户, 类似mysql的root用户).</p>
+<p>在bin目录下打开cmd，然后输入mongo进入数据库，再输入下面的命令</p>
+<blockquote>
+<p>首先切换到leanote数据库下<br>use leanote;</p>
+</blockquote>
+<blockquote>
+<p>添加一个用户root, 密码是abc123<br>db.createUser({<br>    user: ‘root’,<br>    pwd: ‘abc123’,<br>    roles: [{role: ‘dbOwner’, db: ‘leanote’}]<br>});</p>
+</blockquote>
+<blockquote>
+<p>测试下是否正确<br>db.auth(“root”, “abc123”);<br>1<br>返回1表示正确</p>
+</blockquote>
+<p>用户添加好后重启下mongodb服务。<br><strong>还要修改配置文件</strong>: 修改 C:\leanote\conf\ <code>app.conf</code> 文件</p>
+<blockquote>
+<p>db.host=127.0.0.1<br>db.port=27017<br>db.dbname=leanote # required<br>db.username=root # if not exists, please leave blank<br>db.password=abc123 # if not exists, please leave blank</p>
+</blockquote>
+<h1 id="运行leanote"><a href="#运行leanote" class="headerlink" title="运行leanote"></a>运行leanote</h1><p>到了这一步，基本上可以宣告成功了<br>以 管理员权限 打开cmd，输入：</p>
+<blockquote>
+<p>cd C:\leanote\bin</p>
+</blockquote>
+<blockquote>
+<p>run.bat</p>
+</blockquote>
+<p>最后出现以下信息证明运行成功:<br>Listening on :9000…</p>
+<p>恭喜你, 打开浏览器输入: <a href="http://localhost:9000" target="_blank" rel="noopener">http://localhost:9000</a> 体验leanote吧!<br>选择登录，默认管理员账号为admin，密码为abc123。登陆成功后选择右上角的后台管理，即可登录后台管理。</p>
+<p>注意：做到这里，leanote已经正常运行，但在电脑重启后，还需要再依次运行MongoDB server、leanote才能够启动，所以把 C:\leanote\bin\ 路径下的run.bat文件 创建一个快捷方式放到系统的启动里面即可，也可以放在桌面开机的时候手动启动。</p>
+<h1 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h1><p>修改 C:\leanote\conf\ <code>app.conf</code> 文件里的</p>
+<blockquote>
+<p>http.port=80<br>site.url=<a href="http://localhost:9000" target="_blank" rel="noopener">http://localhost:9000</a></p>
+</blockquote>
+<p>输入<a href="http://localhost:9000" target="_blank" rel="noopener">http://localhost:9000</a>，假设ip地址是111.111.111.111,把localhost换成你的IP地址111.111.111.111即可，如果有域名，也可以把localhost换成你的域名</p>
+<h1 id="安装与配置（Linux版）"><a href="#安装与配置（Linux版）" class="headerlink" title="安装与配置（Linux版）"></a>安装与配置（Linux版）</h1><p>这个。。。我未完待续吧。。。:persevere:</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 qasdwasd@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>leanote蚂蚁笔记 私人云笔记服务搭建</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="yunying61">yunying61</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-02-22, 21:53:24</p>
+    <p><span class="copy-title">最后更新:</span>2020-02-22, 21:53:24</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/22/leanote%E8%9A%82%E8%9A%81%E7%AC%94%E8%AE%B0-%E7%A7%81%E4%BA%BA%E4%BA%91%E7%AC%94%E8%AE%B0%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/" title="leanote蚂蚁笔记 私人云笔记服务搭建">http://yoursite.com/2020/02/22/leanote%E8%9A%82%E8%9A%81%E7%AC%94%E8%AE%B0-%E7%A7%81%E4%BA%BA%E4%BA%91%E7%AC%94%E8%AE%B0%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019 yunying61</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就关注,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#hexo','#yunying61','#HTML','#网页','#C语言','#FTP','#服务器','#Minecraft','#我的世界','#cmd','#mklink','#windows','#Nginx','#CSDN','#java','#环境搭建','#配置文件','#日记','#Navicat Premium','#激活','#笔记','#重要','#测试','#试验','#文件夹加密','#加密','#文件夹','#MongoDB','#数据库','#leanote','#蚂蚁笔记','#搭建','#右键菜单','#Windows','#命令提示符','#markdown',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+<div class="mobile-menus-out" >
+
+</div>
+<div class="mobile-menus">
+    
+    
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="https://github.com/yunying61">github</a>
+    
+</div>
+
+
+</html>
