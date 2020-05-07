@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+
+<title>星幕·云影的博客信息分类</title>
+<link>http://www.yunying61.top/yunying61.xml</link>
+ 
+<description>此页将以简洁的形式，将我的博客文章显示出来。</description>
+ 
+<copyright>本页面解释权归于星幕·云影</copyright>
+ 
+<language>zh-cn</language>
+ 
+<pubDate>2020/05/07/20：55：10</pubDate>
+ 
+<lastBuildDate>2020 年 05 月 07 日</lastBuildDate>
+ 
+<generator>Notepad</generator>
+
+<textinput>
+    <description>搜索内容</description>
+    <title>搜索</title>
+    <link>http://www.yunying61.top/</link>
+    <name>s</name>
+</textinput>
+
+<item>
+ <title>hexo的笔记</title>
+ <link>http://www.yunying61.top/2019/12/01/hexo-note/</link>
+ <description>这是有关于hexo的一些内容</description>
+ <category>笔记</category>
+ <author>星幕·云影</author>
+</item>
+
+<item>
+ <title>hexo的笔记</title>
+ <link>http://www.yunying61.top/2019/12/01/hexo-note/</link>
+ <description>这是有关于hexo的一些内容</description>
+ <category>笔记</category>
+ <author>星幕·云影</author>
+</item>
+
+
+
+</channel>
+</rss>
