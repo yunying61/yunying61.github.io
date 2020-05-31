@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>C++ 类&amp;对象 | 星幕·云影的博客 - yunying61</title>
+  <meta name="keywords" content=" 笔记 , C++ , 类 ">
+  <meta name="description" content="C++ 类&amp;对象 | 星幕·云影的博客 - yunying61">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="C 自定义函数 默认形参描述int fun (int a , int b = 4 , int c = 9){}  这样在c语言中是不可以的，这是c++的概念，默认参数。 以上面的fun函数为例fun(2);        默认b=4 , c=9。 fun(4,5,23);         这里在函数中a=3 , b=5 , c=23。就是说，如果调用时有了实参代入，就使用实参的值；如果没有，就使用">
+<meta name="keywords" content="笔记,C++,形参">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ 自定义函数 默认形参">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;31&#x2F;C-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0-%E9%BB%98%E8%AE%A4%E5%BD%A2%E5%8F%82&#x2F;index.html">
+<meta property="og:site_name" content="星幕·云影的博客 - yunying61">
+<meta property="og:description" content="C 自定义函数 默认形参描述int fun (int a , int b = 4 , int c = 9){}  这样在c语言中是不可以的，这是c++的概念，默认参数。 以上面的fun函数为例fun(2);        默认b=4 , c=9。 fun(4,5,23);         这里在函数中a=3 , b=5 , c=23。就是说，如果调用时有了实参代入，就使用实参的值；如果没有，就使用">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-05-31T15:11:47.000Z">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/Noctis.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/Noctis.jpg" />
+</a>
+<div class="author">
+    <span>yunying61</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/yunying61.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/yunying61" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/5119152507" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/eecbdf80a551b0358b6882889f026429" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="csdn" href="https://me.csdn.net/blog/weixin_45385155" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-csdn"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:yunying61@yunying61.club" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=774043568&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=1326412238" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+<a class="more-menus">更多菜单</a>
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(45)</small></div></li>
+    
+        
+            
+            <li><div data-rel="笔记"><i class="fold iconfont icon-right"></i>笔记<small>(16)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="激活">激活<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="C/C++">C/C++<small>(10)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="未分类">未分类<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="服务器"><i class="fold iconfont icon-right"></i>服务器<small>(5)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="搭建">搭建<small>(5)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="IT"><i class="fold iconfont icon-right"></i>IT<small>(18)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="技术">技术<small>(3)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="应用"><i class="fold iconfont icon-right"></i>应用<small>(9)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="程序">程序<small>(7)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技巧">技巧<small>(2)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="搭建与配置">搭建与配置<small>(11)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Minecraft">Minecraft<small>(4)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="网络">网络<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="日记">日记<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="测试区">测试区<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="问题解决"><i class="fold iconfont icon-right"></i>问题解决<small>(1)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="电脑">电脑<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    <a class="dynamic-menu site_url"   href="/photo">相册</a>
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="ftp://ftp.yunying61.cn/">FTP</a>
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="https://github.com/yunying61">github</a>
+    
+    </div>
+    <div><a  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="45">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="https://www.codesheep.cn/">codesheep</a></li>
+            
+            <li><a target="_blank" href="https://nekosama.cn/">Magnolia</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color5">hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">yunying61</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">HTML</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">网页</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">C语言</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">FTP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">服务器</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">cmd</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">mklink</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">windows</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">Minecraft</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">我的世界</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Nginx</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">CSDN</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">环境搭建</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">配置文件</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">日记</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Navicat Premium</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">激活</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">笔记</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">重要</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">测试</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">试验</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">文件夹加密</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">加密</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">文件夹</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">右键菜单</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">Windows</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">命令提示符</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MongoDB</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">leanote</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">蚂蚁笔记</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">搭建</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">公式编辑器</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Equation Editor</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Office</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">WPS</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">矩阵</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">博客</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">部署</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">配置</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">运行</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Win+R</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">历史记录</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">解决</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">记录</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">C++</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">const</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">new关键字</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">static</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">静态存储</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">setw</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">字符控制</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">引用</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">内联函数</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">形参</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">类</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">重载函数</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">markdown</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">C</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">头文件</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">.h</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="笔记 "
+           href="/2019/12/01/hexo-note/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="hexo-note(hexo的笔记)">hexo-note(hexo的笔记)</span>
+            <span class="post-date" title="2019-12-01 15:03:07">2019/12/01</span>
+        </a>
+        
+        <a  class="未分类 "
+           href="/2019/12/01/%E6%98%9F%E5%B9%95%C2%B7%E4%BA%91%E5%BD%B1%E7%9A%84%E7%BD%91%E9%A1%B5%E9%93%BE%E6%8E%A5%E5%BA%93/"
+           data-tag="yunying61,HTML,网页"
+           data-author="" >
+            <span class="post-title" title="星幕·云影的网页链接库">星幕·云影的网页链接库</span>
+            <span class="post-date" title="2019-12-01 17:09:18">2019/12/01</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2019/12/05/C%E8%AF%AD%E8%A8%80-note/"
+           data-tag="C语言"
+           data-author="" >
+            <span class="post-title" title="C - note（C语言的笔记）">C - note（C语言的笔记）</span>
+            <span class="post-date" title="2019-12-05 19:41:43">2019/12/05</span>
+        </a>
+        
+        <a  class="服务器 搭建 搭建与配置 网络 "
+           href="/2019/12/14/FTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"
+           data-tag="FTP,服务器"
+           data-author="" >
+            <span class="post-title" title="FTP服务器搭建">FTP服务器搭建</span>
+            <span class="post-date" title="2019-12-14 15:34:19">2019/12/14</span>
+        </a>
+        
+        <a  class="IT 技术 "
+           href="/2020/01/01/Windows%E4%B8%8Bmklink%E4%BD%BF%E7%94%A8/"
+           data-tag="cmd,mklink,windows"
+           data-author="" >
+            <span class="post-title" title="Windows下mklink使用">Windows下mklink使用</span>
+            <span class="post-date" title="2020-01-01 10:51:39">2020/01/01</span>
+        </a>
+        
+        <a  class="服务器 搭建 搭建与配置 Minecraft "
+           href="/2020/01/10/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"
+           data-tag="服务器,Minecraft,我的世界"
+           data-author="" >
+            <span class="post-title" title="Minecraft服务器搭建">Minecraft服务器搭建</span>
+            <span class="post-date" title="2020-01-10 13:47:38">2020/01/10</span>
+        </a>
+        
+        <a  class="服务器 应用 搭建 程序 搭建与配置 网络 "
+           href="/2020/01/13/Windows%E4%B8%8B%E7%9A%84Nginx%E5%9B%BE%E7%89%87%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"
+           data-tag="服务器,Nginx"
+           data-author="" >
+            <span class="post-title" title="Windows下的Nginx图片服务器搭建">Windows下的Nginx图片服务器搭建</span>
+            <span class="post-date" title="2020-01-13 19:18:26">2020/01/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/01/14/C%E8%AF%AD%E8%A8%80-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C语言 问题汇总">C语言 问题汇总</span>
+            <span class="post-date" title="2020-01-14 13:49:02">2020/01/14</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/01/14/FTP%E6%9C%8D%E5%8A%A1%E5%99%A8-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FTP服务器 问题汇总">FTP服务器 问题汇总</span>
+            <span class="post-date" title="2020-01-14 13:48:36">2020/01/14</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/01/10/%E6%9C%89%E5%85%B3%E5%9F%9F%E5%90%8D%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="有关域名的一些事">有关域名的一些事</span>
+            <span class="post-date" title="2020-01-10 15:46:56">2020/01/10</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/01/14/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Minecraft服务器 问题汇总">Minecraft服务器 问题汇总</span>
+            <span class="post-date" title="2020-01-14 13:48:13">2020/01/14</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/01/14/Nginx-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Nginx 问题汇总">Nginx 问题汇总</span>
+            <span class="post-date" title="2020-01-14 13:47:39">2020/01/14</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/01/18/CSDN%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%A0%BC%E5%BC%8F/"
+           data-tag="CSDN"
+           data-author="" >
+            <span class="post-title" title="CSDN的博客格式">CSDN的博客格式</span>
+            <span class="post-date" title="2020-01-18 12:20:00">2020/01/18</span>
+        </a>
+        
+        <a  class="搭建与配置 Minecraft "
+           href="/2020/01/26/%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83/"
+           data-tag="java,环境搭建"
+           data-author="" >
+            <span class="post-title" title="配置Java环境">配置Java环境</span>
+            <span class="post-date" title="2020-01-26 17:30:28">2020/01/26</span>
+        </a>
+        
+        <a  class="Minecraft "
+           href="/2020/01/31/Minecraft-Mod%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"
+           data-tag="服务器,Minecraft,我的世界"
+           data-author="" >
+            <span class="post-title" title="Minecraft Mod安装教程">Minecraft Mod安装教程</span>
+            <span class="post-date" title="2020-01-31 15:45:44">2020/01/31</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/02/07/FTP%E7%AB%99%E7%82%B9%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80-%E7%94%A8%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FTP站点快速打开(用资源管理器)">FTP站点快速打开(用资源管理器)</span>
+            <span class="post-date" title="2020-02-07 12:25:35">2020/02/07</span>
+        </a>
+        
+        <a  class="服务器 搭建 搭建与配置 Minecraft "
+           href="/2020/01/30/%E9%85%8D%E7%BD%AEMinecraft%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%96%87%E4%BB%B6/"
+           data-tag="服务器,Minecraft,我的世界,配置文件"
+           data-author="" >
+            <span class="post-title" title="配置Minecraft服务端文件">配置Minecraft服务端文件</span>
+            <span class="post-date" title="2020-01-30 14:43:07">2020/01/30</span>
+        </a>
+        
+        <a  class="日记 "
+           href="/2020/02/11/%E5%85%A5%E5%9D%91%E6%97%A5%E8%AE%B0-%E6%AD%A3%E5%BC%8F%E5%BC%80%E5%A7%8B%E7%8E%A9Linux/"
+           data-tag="日记"
+           data-author="" >
+            <span class="post-title" title="入坑日记-正式开始玩Linux">入坑日记-正式开始玩Linux</span>
+            <span class="post-date" title="2020-02-11 15:03:40">2020/02/11</span>
+        </a>
+        
+        <a  class="笔记 应用 程序 激活 "
+           href="/2020/02/16/Navicat-Premium15%E6%BF%80%E6%B4%BB%E8%BF%87%E7%A8%8B/"
+           data-tag="Navicat Premium,激活"
+           data-author="" >
+            <span class="post-title" title="Navicat Premium 15激活过程">Navicat Premium 15激活过程</span>
+            <span class="post-date" title="2020-02-16 16:54:54">2020/02/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/02/16/%E5%AF%B9%E5%9B%BE%E7%89%87%E8%BF%9B%E8%A1%8C%E5%BC%95%E7%94%A8%E7%9A%84%E6%80%BB%E7%BB%93/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="对图片进行引用的总结">对图片进行引用的总结</span>
+            <span class="post-date" title="2020-02-16 22:32:29">2020/02/16</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/02/16/%E8%A6%81%E5%BC%95%E8%B5%B7%E9%87%8D%E8%A7%86%E7%9A%84%E6%96%B9%E6%96%B9%E9%9D%A2%E9%9D%A2/"
+           data-tag="日记,笔记,重要"
+           data-author="" >
+            <span class="post-title" title="要引起重视的方方面面">要引起重视的方方面面</span>
+            <span class="post-date" title="2020-02-16 22:10:59">2020/02/16</span>
+        </a>
+        
+        <a  class="测试区 "
+           href="/2020/02/16/%E8%AF%95%E9%AA%8C%E7%BB%84-1/"
+           data-tag="测试,试验"
+           data-author="" >
+            <span class="post-title" title="试验组-1">试验组-1</span>
+            <span class="post-date" title="2020-02-16 21:40:41">2020/02/16</span>
+        </a>
+        
+        <a  class="IT 应用 技术 程序 "
+           href="/2020/02/17/%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8A%A0%E5%AF%86/"
+           data-tag="文件夹加密,加密,文件夹"
+           data-author="" >
+            <span class="post-title" title="简单的文件夹加密">简单的文件夹加密</span>
+            <span class="post-date" title="2020-02-17 14:16:24">2020/02/17</span>
+        </a>
+        
+        <a  class="IT 应用 技术 技巧 "
+           href="/2020/02/23/%E5%9C%A8Windows%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%89%93%E5%BC%80cmd%E5%91%BD%E4%BB%A4/"
+           data-tag="cmd,右键菜单,Windows,命令提示符"
+           data-author="" >
+            <span class="post-title" title="在Windows右键菜单中添加‘打开cmd命令’">在Windows右键菜单中添加‘打开cmd命令’</span>
+            <span class="post-date" title="2020-02-23 16:45:53">2020/02/23</span>
+        </a>
+        
+        <a  class="应用 程序 搭建与配置 "
+           href="/2020/02/22/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"
+           data-tag="MongoDB,数据库"
+           data-author="" >
+            <span class="post-title" title="MongoDB数据库 安装与配置">MongoDB数据库 安装与配置</span>
+            <span class="post-date" title="2020-02-22 21:53:49">2020/02/22</span>
+        </a>
+        
+        <a  class="服务器 应用 搭建 程序 搭建与配置 "
+           href="/2020/02/22/leanote%E8%9A%82%E8%9A%81%E7%AC%94%E8%AE%B0-%E7%A7%81%E4%BA%BA%E4%BA%91%E7%AC%94%E8%AE%B0%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/"
+           data-tag="笔记,leanote,蚂蚁笔记,搭建"
+           data-author="" >
+            <span class="post-title" title="leanote蚂蚁笔记 私人云笔记服务搭建">leanote蚂蚁笔记 私人云笔记服务搭建</span>
+            <span class="post-date" title="2020-02-22 21:53:24">2020/02/22</span>
+        </a>
+        
+        <a  class="IT 应用 程序 搭建与配置 "
+           href="/2020/03/31/%E5%85%AC%E5%BC%8F%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E8%AE%BE%E7%BD%AE/"
+           data-tag="公式编辑器,Equation Editor,Office,WPS,矩阵"
+           data-author="" >
+            <span class="post-title" title="公式编辑器的设置">公式编辑器的设置</span>
+            <span class="post-date" title="2020-03-31 12:19:27">2020/03/31</span>
+        </a>
+        
+        <a  class="IT 搭建与配置 "
+           href="/2020/03/02/Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E4%B8%AA%E4%BA%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/"
+           data-tag="hexo,搭建,博客,部署"
+           data-author="" >
+            <span class="post-title" title="Hexo部署到个人服务器">Hexo部署到个人服务器</span>
+            <span class="post-date" title="2020-03-02 11:59:12">2020/03/02</span>
+        </a>
+        
+        <a  class="IT 搭建与配置 "
+           href="/2020/03/02/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E9%85%8D%E7%BD%AE/"
+           data-tag="hexo,博客,配置"
+           data-author="" >
+            <span class="post-title" title="Hexo博客的初始化和配置">Hexo博客的初始化和配置</span>
+            <span class="post-date" title="2020-03-02 21:05:02">2020/03/02</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/04/03/Markdown%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Markdown使用emoji表情">Markdown使用emoji表情</span>
+            <span class="post-date" title="2020-04-03 22:55:49">2020/04/03</span>
+        </a>
+        
+        <a  class="IT 应用 程序 搭建与配置 "
+           href="/2020/03/02/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%92%8C%E7%AE%80%E5%8D%95%E9%83%A8%E7%BD%B2/"
+           data-tag="hexo,搭建,博客"
+           data-author="" >
+            <span class="post-title" title="Hexo博客搭建和简单部署">Hexo博客搭建和简单部署</span>
+            <span class="post-date" title="2020-03-02 12:00:00">2020/03/02</span>
+        </a>
+        
+        <a  class="IT 应用 技巧 问题解决 电脑 "
+           href="/2020/04/03/Win-R%E8%BF%90%E8%A1%8C%E6%B2%A1%E6%9C%89%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"
+           data-tag="运行,Win+R,历史记录,解决,记录"
+           data-author="" >
+            <span class="post-title" title="Win+R运行没有历史记录的解决方法">Win+R运行没有历史记录的解决方法</span>
+            <span class="post-date" title="2020-04-03 22:38:47">2020/04/03</span>
+        </a>
+        
+        <a  class="笔记 IT C/C++ "
+           href="/2020/05/31/C-%E4%B8%AD-const-%E7%9A%84%E7%94%A8%E6%B3%95/"
+           data-tag="笔记,C++,const"
+           data-author="" >
+            <span class="post-title" title="C++ 中 const 的用法">C++ 中 const 的用法</span>
+            <span class="post-date" title="2020-05-31 23:03:53">2020/05/31</span>
+        </a>
+        
+        <a  class="笔记 IT C/C++ "
+           href="/2020/05/31/C-%E4%B8%AD-new-%E7%9A%84%E7%94%A8%E6%B3%95/"
+           data-tag="笔记,C++,new关键字"
+           data-author="" >
+            <span class="post-title" title="C++ 中 new 的用法">C++ 中 new 的用法</span>
+            <span class="post-date" title="2020-05-31 23:03:30">2020/05/31</span>
+        </a>
+        
+        <a  class="笔记 IT C/C++ "
+           href="/2020/05/31/C-%E4%B8%AD-static-%E9%9D%99%E6%80%81%E5%AD%98%E5%82%A8/"
+           data-tag="笔记,C++,static,静态存储"
+           data-author="" >
+            <span class="post-title" title="C++ 中 static 静态存储">C++ 中 static 静态存储</span>
+            <span class="post-date" title="2020-05-31 23:07:49">2020/05/31</span>
+        </a>
+        
+        <a  class="笔记 IT C/C++ "
+           href="/2020/05/31/C-%E4%B8%AD-setw-%E5%87%BD%E6%95%B0-%E6%8E%A7%E5%88%B6%E5%AD%97%E6%AE%B5%E5%AE%BD%E5%BA%A6/"
+           data-tag="笔记,C++,setw,字符控制"
+           data-author="" >
+            <span class="post-title" title="C++ 中 setw() 函数  控制字段宽度">C++ 中 setw() 函数  控制字段宽度</span>
+            <span class="post-date" title="2020-05-31 23:06:37">2020/05/31</span>
+        </a>
+        
+        <a  class="笔记 IT C/C++ "
+           href="/2020/05/31/C-%E4%B8%AD%E7%9A%84-%E5%BC%95%E7%94%A8/"
+           data-tag="笔记,C++,引用"
+           data-author="" >
+            <span class="post-title" title="C++ 中的 引用">C++ 中的 引用</span>
+            <span class="post-date" title="2020-05-31 23:08:49">2020/05/31</span>
+        </a>
+        
+        <a  class="笔记 IT C/C++ "
+           href="/2020/05/31/C-%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0/"
+           data-tag="笔记,C++,内联函数"
+           data-author="" >
+            <span class="post-title" title="C++ 内联函数">C++ 内联函数</span>
+            <span class="post-date" title="2020-05-31 23:02:21">2020/05/31</span>
+        </a>
+        
+        <a  class="笔记 IT C/C++ "
+           href="/2020/05/31/C-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0-%E9%BB%98%E8%AE%A4%E5%BD%A2%E5%8F%82/"
+           data-tag="笔记,C++,形参"
+           data-author="" >
+            <span class="post-title" title="C++ 自定义函数 默认形参">C++ 自定义函数 默认形参</span>
+            <span class="post-date" title="2020-05-31 23:11:47">2020/05/31</span>
+        </a>
+        
+        <a  class="未分类 "
+           href="/2020/01/14/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2020-01-14 16:58:47">2020/01/14</span>
+        </a>
+        
+        <a  class="笔记 IT C/C++ "
+           href="/2020/05/31/C-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/"
+           data-tag="笔记,C++,类"
+           data-author="" >
+            <span class="post-title" title="C++ 类&amp;对象">C++ 类&amp;对象</span>
+            <span class="post-date" title="2020-05-31 22:58:09">2020/05/31</span>
+        </a>
+        
+        <a  class="笔记 IT C/C++ "
+           href="/2020/05/31/C-%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0/"
+           data-tag="笔记,C++,重载函数"
+           data-author="" >
+            <span class="post-title" title="C++ 重载函数">C++ 重载函数</span>
+            <span class="post-date" title="2020-05-31 23:10:19">2020/05/31</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2019/11/30/markdown/"
+           data-tag="markdown"
+           data-author="" >
+            <span class="post-title" title="markdown的笔记（代码运用)">markdown的笔记（代码运用)</span>
+            <span class="post-date" title="2019-11-30 17:33:10">2019/11/30</span>
+        </a>
+        
+        <a  class="未分类 "
+           href="/2019/11/24/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-yun/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="我的第一篇博客-yun">我的第一篇博客-yun</span>
+            <span class="post-date" title="2019-11-24 20:36:57">2019/11/24</span>
+        </a>
+        
+        <a  class="笔记 IT C/C++ "
+           href="/2020/05/31/C%E8%AF%AD%E8%A8%80-%E6%A0%87%E5%87%86%E5%A4%B4%E6%96%87%E4%BB%B6-%E8%AF%A6/"
+           data-tag="笔记,C,头文件,.h"
+           data-author="" >
+            <span class="post-title" title="C语言 标准头文件(详)">C语言 标准头文件(详)</span>
+            <span class="post-date" title="2020-05-31 22:55:28">2020/05/31</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-C-类与对象" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">C++ 类&amp;对象</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="笔记">笔记</a>/
+            
+                <a  data-rel="IT">IT</a>/
+            
+                <a  data-rel="C/C++">C/C++</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color3">笔记</a>
+            
+            <a class="color4">C++</a>
+            
+            <a class="color2">类</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-05-31 22:58:09'>2020-05-31 22:58</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C-类-amp-对象"><span class="toc-text">C++ 类&amp;对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#C-类定义"><span class="toc-text">C++ 类定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类成员的访问限制-权限"><span class="toc-text">类成员的访问限制(权限)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#公有（public）成员"><span class="toc-text">公有（public）成员</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#私有（private）成员"><span class="toc-text">私有（private）成员</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保护（protected）成员"><span class="toc-text">保护（protected）成员</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码演示："><span class="toc-text">代码演示：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定义-类-的对象"><span class="toc-text">定义 类 的对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#访问-对象-里的数据成员"><span class="toc-text">访问 对象 里的数据成员</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实例"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类的构造函数"><span class="toc-text">类的构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用初始化列表来初始化字段"><span class="toc-text">使用初始化列表来初始化字段</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类的析构函数"><span class="toc-text">类的析构函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类的拷贝构造函数"><span class="toc-text">类的拷贝构造函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类的友元函数"><span class="toc-text">类的友元函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#类-amp-对象详解"><span class="toc-text">类 &amp; 对象详解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#继承-amp-派生"><span class="toc-text">继承 &amp; 派生</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#单继承"><span class="toc-text">单继承</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多继承"><span class="toc-text">多继承</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#公有继承-pubilc"><span class="toc-text">公有继承 pubilc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保护继承-protected"><span class="toc-text">保护继承 protected</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#私有继承-private"><span class="toc-text">私有继承 private</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#二义性问题"><span class="toc-text">二义性问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚基类"><span class="toc-text">虚基类</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="C-类-amp-对象"><a href="#C-类-amp-对象" class="headerlink" title="C++ 类&amp;对象"></a>C++ 类&amp;对象</h1><p>C++ 在 C 语言的基础上增加了面向对象编程，C++ 支持面向对象程序设计。类是 C++ 的核心特性，通常被称为用户定义的类型。</p>
+<p>类用于指定对象的形式，它包含了数据表示法和用于处理数据的方法。类中的数据和方法称为类的成员。函数在一个类中被称为类的成员。</p>
+<p>[TOC]</p>
+<h2 id="C-类定义"><a href="#C-类定义" class="headerlink" title="C++ 类定义"></a>C++ 类定义</h2><p>定义一个类，本质上是定义一个数据类型的蓝图。这实际上并没有定义任何数据，但它定义了类的名称意味着它定义了类的对象包括了什么，以及可以在这个对象上执行哪些操作。</p>
+<p>类定义是以关键字 <strong>class</strong> 开头，后跟类的名称。类的主体是包含在一对花括号中。类定义后必须跟着一个分号或一个声明列表。<u>并且其中的成员数据（变量）不能赋初始值</u>。例如，我们使用关键字 <strong>class</strong> 定义 Box 数据类型，如下所示：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    	<span class="function"><span class="keyword">void</span> <span class="title">V</span><span class="params">()</span></span>&#123;v=length*breadth*<span class="built_in">height</span>;<span class="keyword">return</span> v;&#125;		<span class="comment">//计算体积</span></span><br><span class="line">    	<span class="function"><span class="keyword">void</span> <span class="title">C</span><span class="params">()</span></span>&#123;c=<span class="number">4</span>*(length+breadth+<span class="built_in">height</span>);<span class="keyword">return</span> c;&#125;	<span class="comment">//计算周长</span></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    	<span class="keyword">double</span> length;   <span class="comment">// 盒子的长度</span></span><br><span class="line"> 		<span class="keyword">double</span> breadth;  <span class="comment">// 盒子的宽度</span></span><br><span class="line"> 		<span class="keyword">double</span> <span class="built_in">height</span>;   <span class="comment">// 盒子的高度</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="类成员的访问限制-权限"><a href="#类成员的访问限制-权限" class="headerlink" title="类成员的访问限制(权限)"></a>类成员的访问限制(权限)</h2><p>数据封装是面向对象编程的一个重要特点，它防止函数直接访问类类型的内部成员。类成员的访问限制是通过在类主体内部对各个区域标记 <strong>public、private、protected</strong> 来指定的。关键字 <strong>public、private、protected</strong> 称为访问修饰符。</p>
+<p>一个类可以有多个 public、protected 或 private 标记区域。<code>每个标记区域在下一个标记区域开始之前</code>或者<code>在遇到类主体结束右括号之前</code>都是有效的。<u>成员和类的默认访问修饰符是 private</u>。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">		<span class="comment">// 公有成员</span></span><br><span class="line">	<span class="keyword">protected</span>:</span><br><span class="line"> 		<span class="comment">// 受保护成员</span></span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		<span class="comment">// 私有成员</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="公有（public）成员"><a href="#公有（public）成员" class="headerlink" title="公有（public）成员"></a>公有（public）成员</h3><p><strong>公有</strong>成员在程序中类的外部是可访问的。您可以不使用任何成员函数来设置和获取公有变量的值。</p>
+<h3 id="私有（private）成员"><a href="#私有（private）成员" class="headerlink" title="私有（private）成员"></a>私有（private）成员</h3><p><strong>私有</strong>成员变量或函数在类的外部是不可访问的，甚至是不可查看的。只有类和友元函数可以访问私有成员。</p>
+<p>默认情况下，如果您没有使用任何访问修饰符，类的成员将被假定为私有成员。</p>
+<h3 id="保护（protected）成员"><a href="#保护（protected）成员" class="headerlink" title="保护（protected）成员"></a>保护（protected）成员</h3><p><strong>保护</strong>成员变量或函数与私有成员十分相似，但有一点不同，保护成员在派生类（即子类）中是可访问的。</p>
+<h4 id="代码演示："><a href="#代码演示：" class="headerlink" title="代码演示："></a>代码演示：</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">text</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    	<span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    	<span class="keyword">int</span> b;</span><br><span class="line">    <span class="keyword">protected</span>:</span><br><span class="line">    	<span class="keyword">int</span> c;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    	<span class="function"><span class="keyword">void</span> <span class="title">setb</span><span class="params">(<span class="keyword">int</span> Bb)</span></span>&#123;b=Bb;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">t</span>:</span>:<span class="built_in">text</span>	<span class="comment">// t 是 text 的派生类</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    	<span class="function"><span class="keyword">void</span> <span class="title">setc</span><span class="params">(<span class="keyword">int</span> Cc)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">void</span> t::setc(<span class="keyword">int</span> Cc) &#123;c=Cc;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">text</span> text1;</span><br><span class="line">    text1.a = <span class="number">5</span>;	<span class="comment">//这是允许的，因为 a 是公有的</span></span><br><span class="line">    text1.b = <span class="number">10</span>;	<span class="comment">//这是不允许的，因为 b 是私有的</span></span><br><span class="line">    text1.setb(<span class="number">10</span>);	<span class="comment">//这是允许的，因为 b 的赋值是通过外部接口去给 b 赋值</span></span><br><span class="line">    </span><br><span class="line">    t text2;</span><br><span class="line">    t.setc(<span class="number">15</span>);		<span class="comment">//这里使用了成员函数给 text 中的 c 赋值了</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="定义-类-的对象"><a href="#定义-类-的对象" class="headerlink" title="定义 类 的对象"></a>定义 类 的对象</h2><p>类提供了对象的蓝图，所以基本上，对象是根据类来创建的。声明类的对象，就像声明基本类型的变量一样。下面的语句声明了类 Box 的两个对象：</p>
+<p>Box Box1;          // 声明 Box1，类型为 Box<br>Box Box2;          // 声明 Box2，类型为 Box</p>
+<p>对象 Box1 和 Box2 都有它们各自的数据成员。</p>
+<h2 id="访问-对象-里的数据成员"><a href="#访问-对象-里的数据成员" class="headerlink" title="访问 对象 里的数据成员"></a>访问 对象 里的数据成员</h2><p><strong><u>在 类 外</u></strong>访问 类的对象里 的<code>公共数据成员</code>可以使用直接成员访问运算符 (.) 来访问。<br>如使用  “对象名.成员名”  的方式访问<code>public</code>属性的成员</p>
+<p>为了更好地理解这些概念，让我们尝试一下下面的实例：</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">      <span class="keyword">double</span> length;   <span class="comment">// 长度</span></span><br><span class="line">      <span class="keyword">double</span> breadth;  <span class="comment">// 宽度</span></span><br><span class="line">      <span class="keyword">double</span> <span class="built_in">height</span>;   <span class="comment">// 高度</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">( )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   Box Box1;        <span class="comment">// 声明 Box1，类型为 Box</span></span><br><span class="line">   Box Box2;        <span class="comment">// 声明 Box2，类型为 Box</span></span><br><span class="line">   <span class="keyword">double</span> volume = <span class="number">0.0</span>;     <span class="comment">// 用于存储体积</span></span><br><span class="line">   </span><br><span class="line">   <span class="comment">// box 1 详述</span></span><br><span class="line">   Box1.<span class="built_in">height</span> = <span class="number">5.0</span>; </span><br><span class="line">   Box1.length = <span class="number">6.0</span>; </span><br><span class="line">   Box1.breadth = <span class="number">7.0</span>;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">// box 2 详述</span></span><br><span class="line">   Box2.<span class="built_in">height</span> = <span class="number">10.0</span>;</span><br><span class="line">   Box2.length = <span class="number">12.0</span>;</span><br><span class="line">   Box2.breadth = <span class="number">13.0</span>;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">// box 1 的体积</span></span><br><span class="line">   volume = Box1.<span class="built_in">height</span> * Box1.length * Box1.breadth;</span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">"Box1 的体积："</span> &lt;&lt; volume &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">// box 2 的体积</span></span><br><span class="line">   volume = Box2.<span class="built_in">height</span> * Box2.length * Box2.breadth;</span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">"Box2 的体积："</span> &lt;&lt; volume &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当上面的代码被编译和执行时，它会产生下列结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Box1 的体积：210</span><br><span class="line">Box2 的体积：1560</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，私有的成员和受保护的成员不能使用直接成员访问运算符 (.) 来直接访问。我们将在后续的教程中学习如何访问私有成员和受保护的成员。</p>
+<h2 id="类的构造函数"><a href="#类的构造函数" class="headerlink" title="类的构造函数"></a>类的构造函数</h2><p>类的<strong>构造函数</strong>是类的一种特殊的成员函数，它会在每次创建类的新对象时执行。</p>
+<p><strong>特点：</strong></p>
+<ol>
+<li>构造函数的名称与类的名称是完全相同的，</li>
+<li>并且不会返回任何类型，</li>
+<li>也不会返回 void。</li>
+</ol>
+<p><strong>作用：</strong>构造函数可用于为某些成员变量设置初始值。</p>
+<blockquote>
+<p>在创建派生类对象时,构造函数的执行顺序：<br>基类构造函数  -  对象成员构造函数  -  派生类本身的构造函数</p>
+</blockquote>
+<p>下面的实例有助于更好地理解构造函数的概念：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Line</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">setLength</span><span class="params">( <span class="keyword">double</span> len )</span></span>;</span><br><span class="line">		<span class="function"><span class="keyword">double</span> <span class="title">getLength</span><span class="params">( <span class="keyword">void</span> )</span></span>;</span><br><span class="line">		Line();  <span class="comment">// 这是不带参数的构造函数，可以用于旁白。</span></span><br><span class="line">		Line(<span class="keyword">double</span> len);  <span class="comment">// 这是带参数的构造函数,在创建对象时就会给对象赋初始值</span></span><br><span class="line">		<span class="comment">//这里的两个Line是使用了重载函数</span></span><br><span class="line">    </span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">      <span class="keyword">double</span> length;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 成员函数定义，包括构造函数</span></span><br><span class="line">Line::Line(<span class="keyword">void</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Object is being created"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    length = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">Line::Line( <span class="keyword">double</span> len)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Object is being created, length = "</span> &lt;&lt; len &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    length = len;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> Line::setLength( <span class="keyword">double</span> len )</span><br><span class="line">&#123;</span><br><span class="line">    length = len;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">double</span> Line::getLength( <span class="keyword">void</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> length;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 程序的主函数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">( )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Line line1;			<span class="comment">//自动指向不带参数的</span></span><br><span class="line">    <span class="function">Line <span class="title">line2</span><span class="params">(<span class="number">10.0</span>)</span></span>;	<span class="comment">//自动指向带参数的</span></span><br><span class="line"> </span><br><span class="line">   <span class="comment">// 设置长度</span></span><br><span class="line">   <span class="built_in">line</span>.setLength(<span class="number">6.0</span>); </span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">"Length of line : "</span> &lt;&lt; <span class="built_in">line</span>.getLength() &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用初始化列表来初始化字段"><a href="#使用初始化列表来初始化字段" class="headerlink" title="使用初始化列表来初始化字段"></a>使用初始化列表来初始化字段</h3><p>主要是用于 较多参数 时的值的初始化</p>
+<p>使用初始化列表来初始化字段：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Line::Line( <span class="keyword">double</span> len): length(len)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Object is being created, length = "</span> &lt;&lt; len &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的语法等同于如下语法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Line::Line( <span class="keyword">double</span> len)</span><br><span class="line">&#123;</span><br><span class="line">    length = len;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Object is being created, length = "</span> &lt;&lt; len &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>假设有一个类 C，具有多个字段 X、Y、Z 等需要进行初始化，同理地，您可以使用上面的语法，只需要在不同的字段使用逗号进行分隔，如下所示：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C::C( <span class="keyword">double</span> a, <span class="keyword">double</span> b, <span class="keyword">double</span> c): X(a), Y(b), Z(c)</span><br><span class="line">&#123;</span><br><span class="line">  ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="类的析构函数"><a href="#类的析构函数" class="headerlink" title="类的析构函数"></a>类的析构函数</h2><p>类的<strong>析构函数</strong>是类的一种特殊的成员函数，它会在每次删除所创建的对象时执行。</p>
+<p>析构函数的名称与类的名称是完全相同的，只是在前面加了个波浪号（~）作为前缀，它不会返回任何值，也不能带有任何参数。析构函数有助于在跳出程序（比如关闭文件、释放内存等）前释放资源。</p>
+<blockquote>
+<p>在具有继承关系的类层次体系中,析构函数执行的顺序：<br>派生类本身的析构函数  -  对象成员析构函数  -  基类析构函数</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Line</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">      <span class="function"><span class="keyword">void</span> <span class="title">setLength</span><span class="params">( <span class="keyword">double</span> len )</span></span>;</span><br><span class="line">      <span class="function"><span class="keyword">double</span> <span class="title">getLength</span><span class="params">( <span class="keyword">void</span> )</span></span>;</span><br><span class="line">      Line();   <span class="comment">// 这是构造函数声明</span></span><br><span class="line">      ~Line();  <span class="comment">// 这是析构函数声明</span></span><br><span class="line"> </span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">      <span class="keyword">double</span> length;</span><br><span class="line">&#125;;</span><br><span class="line"> <span class="comment">// 成员函数定义，包括构造函数</span></span><br><span class="line">Line::Line(<span class="keyword">void</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"对象已被创建"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line">Line::~Line(<span class="keyword">void</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"对象已被删除"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">void</span> Line::setLength( <span class="keyword">double</span> len )</span><br><span class="line">&#123;</span><br><span class="line">    length = len;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">double</span> Line::getLength( <span class="keyword">void</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> length;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment">// 程序的主函数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">( )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Line <span class="built_in">line</span>;</span><br><span class="line"> <span class="comment">// 设置长度</span></span><br><span class="line">	<span class="built_in">line</span>.setLength(<span class="number">6.0</span>); </span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Length of line : "</span> &lt;&lt; <span class="built_in">line</span>.getLength() &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"> 	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行后的结果为：</p>
+<blockquote>
+<p>对象已被创建<br>Length of line : 6<br>对象已被删除</p>
+</blockquote>
+<h2 id="类的拷贝构造函数"><a href="#类的拷贝构造函数" class="headerlink" title="类的拷贝构造函数"></a>类的拷贝构造函数</h2><h2 id="类的友元函数"><a href="#类的友元函数" class="headerlink" title="类的友元函数"></a>类的友元函数</h2><p>类的友元函数是定义在类外部，但有权访问类的所有私有（private）成员和保护（protected）成员。尽管友元函数的原型有在类的定义中出现过，但是友元函数并不是成员函数。<br>友元可以是一个函数，该函数被称为友元函数；友元也可以是一个类，该类被称为友元类，在这种情况下，整个类及其所有成员都是友元。<br>如果要声明函数为一个类的友元，需要在类定义中该函数原型前使用关键字 <strong><u>friend</u></strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">double</span> <span class="built_in">width</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">printWidth</span><span class="params">(Box box1)</span></span>;<span class="comment">//也可以是(Box &amp;box1)，在于是否需要形参改变实参。</span></span><br><span class="line">    <span class="keyword">friend</span> <span class="class"><span class="keyword">class</span> <span class="title">BigBox</span>;</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setWidth</span><span class="params">(<span class="keyword">double</span> wid)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BigBox</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span> :</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Print</span><span class="params">(<span class="keyword">int</span> <span class="built_in">width</span>, Box &amp;box2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// BigBox是Box的友元类，它可以直接访问Box类的任何成员</span></span><br><span class="line">        box2.setWidth(<span class="built_in">width</span>);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Width of box : "</span> &lt;&lt; box2.<span class="built_in">width</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 成员函数定义</span></span><br><span class="line"><span class="keyword">void</span> Box::setWidth(<span class="keyword">double</span> wid)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">width</span> = wid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 请注意：printWidth() 不是任何类的成员函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printWidth</span><span class="params">(Box box1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">/* 因为 printWidth() 是 Box 的友元，它可以直接访问该类的任何成员 */</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Width of box : "</span> &lt;&lt; box1.<span class="built_in">width</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 程序的主函数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Box box;</span><br><span class="line">    BigBox big;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使用成员函数设置宽度</span></span><br><span class="line">    box.setWidth(<span class="number">10.0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使用友元函数输出宽度</span></span><br><span class="line">    printWidth(box);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使用友元类中的方法设置宽度</span></span><br><span class="line">    big.Print(<span class="number">20</span>, box);</span><br><span class="line"></span><br><span class="line">    getchar();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="类-amp-对象详解"><a href="#类-amp-对象详解" class="headerlink" title="类 &amp; 对象详解"></a>类 &amp; 对象详解</h1><p>到目前为止，我们已经对 C++ 的类和对象有了基本的了解。下面的列表中还列出了其他一些 C++ 类和对象相关的概念，可以点击相应的链接进行学习。</p>
+<table>
+<thead>
+<tr>
+<th align="left">概念</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="https://www.runoob.com/cplusplus/cpp-class-member-functions.html" target="_blank" rel="noopener">类成员函数</a></td>
+<td align="left">类的成员函数是指那些把定义和原型写在类定义内部的函数，就像类定义中的其他变量一样。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/cplusplus/cpp-class-access-modifiers.html" target="_blank" rel="noopener">类访问修饰符</a></td>
+<td align="left">类成员可以被定义为 public、private 或 protected。默认情况下是定义为 private。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/cplusplus/cpp-constructor-destructor.html" target="_blank" rel="noopener">构造函数 &amp; 析构函数</a></td>
+<td align="left">类的构造函数是一种特殊的函数，在创建一个新的对象时调用。类的析构函数也是一种特殊的函数，在删除所创建的对象时调用。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/cplusplus/cpp-copy-constructor.html" target="_blank" rel="noopener">C++ 拷贝构造函数</a></td>
+<td align="left">拷贝构造函数，是一种特殊的构造函数，它在创建对象时，是使用同一类中之前创建的对象来初始化新创建的对象。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/cplusplus/cpp-friend-functions.html" target="_blank" rel="noopener">C++ 友元函数</a></td>
+<td align="left"><strong>友元函数</strong>可以访问类的 private 和 protected 成员。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/cplusplus/cpp-inline-functions.html" target="_blank" rel="noopener">C++ 内联函数</a></td>
+<td align="left">通过内联函数，编译器试图在调用函数的地方扩展函数体中的代码。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/cplusplus/cpp-this-pointer.html" target="_blank" rel="noopener">C++ 中的 this 指针</a></td>
+<td align="left">每个对象都有一个特殊的指针 <strong>this</strong>，它指向对象本身。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/cplusplus/cpp-pointer-to-class.html" target="_blank" rel="noopener">C++ 中指向类的指针</a></td>
+<td align="left">指向类的指针方式如同指向结构的指针。实际上，类可以看成是一个带有函数的结构。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/cplusplus/cpp-static-members.html" target="_blank" rel="noopener">C++ 类的静态成员</a></td>
+<td align="left">类的数据成员和函数成员都可以被声明为静态的。</td>
+</tr>
+</tbody></table>
+<h1 id="继承-amp-派生"><a href="#继承-amp-派生" class="headerlink" title="继承 &amp; 派生"></a>继承 &amp; 派生</h1><h4 id="单继承"><a href="#单继承" class="headerlink" title="单继承"></a>单继承</h4><p>一个类可以派生自多个类，这意味着，它可以从多个基类继承数据和函数。定义一个派生类，我们使用一个类派生列表来指定基类。类派生列表以一个或多个基类命名，形式如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">derived_class</span>:</span> access_specifier base_class</span><br></pre></td></tr></table></figure>
+
+<p>其中，访问修饰符 access_specifier 是 <strong>public</strong>、<strong>protected</strong> 或 <strong>private</strong> 其中的一个，base_class 是之前定义过的某个类（基类）的名称。如果未使用访问修饰符 access_specifier，则<code>默认为 private</code>。</p>
+<hr>
+<h4 id="多继承"><a href="#多继承" class="headerlink" title="多继承"></a>多继承</h4><p>多继承即一个子类可以有多个父类，它继承了多个父类的特性。</p>
+<p>C++ 类可以从多个类 继承成员，语法如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> &lt;派生类名&gt;:</span>&lt;继承方式<span class="number">1</span>&gt;&lt;基类名<span class="number">1</span>&gt;,&lt;继承方式<span class="number">2</span>&gt;&lt;基类名<span class="number">2</span>&gt;,...</span><br><span class="line">&#123;&lt;派生类类体&gt;&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>其中，访问修饰符 继承方式 是 <strong>public</strong>、<strong>protected</strong> 或 <strong>private</strong> 其中的一个，用来修饰每个基类，各个基类之间用逗号分隔。</p>
+<hr>
+<h3 id="公有继承-pubilc"><a href="#公有继承-pubilc" class="headerlink" title="公有继承 pubilc"></a>公有继承 pubilc</h3><ul>
+<li>基类的public和protected<code>成员</code>的访问属性在派生类中保持不变，但基类的private<code>成员</code>不可直接访问。</li>
+<li>派生类中的<code>成员函数</code>可以直接访问基类中的public和protected成员，但不能直接访问基类的private成员。</li>
+<li>通过派生类的<code>对象</code>只能访问基类的public成员。</li>
+</ul>
+<h3 id="保护继承-protected"><a href="#保护继承-protected" class="headerlink" title="保护继承 protected"></a>保护继承 protected</h3><ul>
+<li>基类的public和protected<code>成员</code>都以protected<code>权限</code>出现在派生类中，但基类的private<code>成员</code>不可直接访问。</li>
+<li>派生类中的<code>成员函数</code>可以直接访问基类中的public和protected成员，但不能直接访问基类的private成员。</li>
+<li>通过派生类的<code>对象</code>不能直接访问基类中的==任何成员==</li>
+</ul>
+<h3 id="私有继承-private"><a href="#私有继承-private" class="headerlink" title="私有继承 private"></a>私有继承 private</h3><ul>
+<li>基类的public和protected<code>成员</code>都以private<code>权限</code>出现在派生类中，但基类的private<code>成员</code>不可直接访问，且以 <code>该派生类</code> 为 ==基类== 的派生类不能访问 <code>该基类</code> 的 ==任何成员==。</li>
+<li>派生类中的<code>成员函数</code>可以直接访问基类中的public和protected成员，但不能直接访问基类的private成员。</li>
+<li>通过派生类的<code>对象</code>不能直接访问基类中的==任何成员==。</li>
+</ul>
+<hr>
+<p><strong>派生后 继承 到的 权限 所对应的：</strong></p>
+<p>派生类的<code>成员</code>对基类成员的访问</p>
+<p>派生类的<code>对象</code>对基类成员的访问</p>
+<p><strong>一个派生类继承了所有的基类方法，但下列情况除外：</strong></p>
+<ul>
+<li>基类的构造函数、析构函数和拷贝构造函数。</li>
+<li>基类的重载运算符。</li>
+<li>基类的友元函数。</li>
+</ul>
+<h4 id="二义性问题"><a href="#二义性问题" class="headerlink" title="二义性问题"></a>二义性问题</h4><h3 id="虚基类"><a href="#虚基类" class="headerlink" title="虚基类"></a>虚基类</h3><p><strong>总结一下三种继承方式：</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">继承方式</th>
+<th align="left">基类的public成员</th>
+<th align="left">基类的protected成员</th>
+<th align="left">基类的private成员</th>
+<th align="left">继承引起的访问控制关系变化概括</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">public继承</td>
+<td align="left">仍为public成员</td>
+<td align="left">仍为protected成员</td>
+<td align="left">不可访问</td>
+<td align="left">基类的非私有成员在子类的访问属性不变</td>
+</tr>
+<tr>
+<td align="left">protected继承</td>
+<td align="left">变为protected成员</td>
+<td align="left">仍为protected成员</td>
+<td align="left">不可访问</td>
+<td align="left">基类的非私有成员都为子类的保护成员</td>
+</tr>
+<tr>
+<td align="left">private继承</td>
+<td align="left">变为private成员</td>
+<td align="left">变为private成员</td>
+<td align="left">不可访问</td>
+<td align="left">基类中的非私有成员都称为子类的私有成员</td>
+</tr>
+</tbody></table>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 qasdwasd@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>C++ 类&amp;对象</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="yunying61">yunying61</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-05-31, 22:58:09</p>
+    <p><span class="copy-title">最后更新:</span>2020-05-31, 22:58:09</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/05/31/C-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" title="C++ 类&amp;对象">http://yoursite.com/2020/05/31/C-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019 yunying61</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就关注,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#hexo','#yunying61','#HTML','#网页','#C语言','#FTP','#服务器','#cmd','#mklink','#windows','#Minecraft','#我的世界','#Nginx','#CSDN','#java','#环境搭建','#配置文件','#日记','#Navicat Premium','#激活','#笔记','#重要','#测试','#试验','#文件夹加密','#加密','#文件夹','#右键菜单','#Windows','#命令提示符','#MongoDB','#数据库','#leanote','#蚂蚁笔记','#搭建','#公式编辑器','#Equation Editor','#Office','#WPS','#矩阵','#博客','#部署','#配置','#运行','#Win+R','#历史记录','#解决','#记录','#C++','#const','#new关键字','#static','#静态存储','#setw','#字符控制','#引用','#内联函数','#形参','#类','#重载函数','#markdown','#C','#头文件','#.h',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    .post {
+        background: url(/photo/9188.jpg);
+    }
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+        background: url("/photo/9186.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+<div class="mobile-menus-out" >
+
+</div>
+<div class="mobile-menus">
+    
+    
+    <a class="dynamic-menu site_url"   href="/photo">相册</a>
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="ftp://ftp.yunying61.cn/">FTP</a>
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="https://github.com/yunying61">github</a>
+    
+</div>
+
+
+</html>
