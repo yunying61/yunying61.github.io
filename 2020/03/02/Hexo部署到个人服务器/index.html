@@ -6,21 +6,31 @@
   <meta name="keywords" content=" hexo , 搭建 , 博客 , 部署 ">
   <meta name="description" content="Hexo部署到个人服务器 | 星幕·云影的博客 - yunying61">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="在CentOS 8上搭建VuePress博客什么是VuePressVuePress 是尤雨溪（vue.js 框架作者）4月12日发布的一个全新的基于 vue 的静态网站生成器，实际上就是一个 vue 的 spa 应用，内置 webpack，可以用来写文档。详见 VuePress中文网VuePress 由两部分组成：第一部分是一个极简静态网站生成器，它包含由 Vue 驱动的主题系统和插件 API，另">
+<meta name="description" content="在CentOS-8上搭建MediaWiki知识库什么是MediaWikiMediaWiki全球最著名的开源wiki程序，运行于PHP+MySQL环境。MediaWiki从2002年2月25日被作为维基百科全书的系统软件，并有大量其他应用实例。MediaWiki的开发得到维基媒体基金会的支持。 MediaWiki是建立wiki网站的首选后台程序，国内的灰狐维客等站点都采用这套系统。 开始搭建安装软件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在CentOS 8上搭建VuePress博客">
-<meta property="og:url" content="http://yoursite.com/2020/08/05/%E5%9C%A8CentOS-8%E4%B8%8A%E6%90%AD%E5%BB%BAVuePress%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="在CentOS-8上搭建MediaWiki知识库">
+<meta property="og:url" content="http://yoursite.com/2020/08/07/%E5%9C%A8CentOS-8%E4%B8%8A%E6%90%AD%E5%BB%BAMediaWiki%E7%9F%A5%E8%AF%86%E5%BA%93/index.html">
 <meta property="og:site_name" content="星幕·云影的博客 - yunying61">
-<meta property="og:description" content="在CentOS 8上搭建VuePress博客什么是VuePressVuePress 是尤雨溪（vue.js 框架作者）4月12日发布的一个全新的基于 vue 的静态网站生成器，实际上就是一个 vue 的 spa 应用，内置 webpack，可以用来写文档。详见 VuePress中文网VuePress 由两部分组成：第一部分是一个极简静态网站生成器，它包含由 Vue 驱动的主题系统和插件 API，另">
+<meta property="og:description" content="在CentOS-8上搭建MediaWiki知识库什么是MediaWikiMediaWiki全球最著名的开源wiki程序，运行于PHP+MySQL环境。MediaWiki从2002年2月25日被作为维基百科全书的系统软件，并有大量其他应用实例。MediaWiki的开发得到维基媒体基金会的支持。 MediaWiki是建立wiki网站的首选后台程序，国内的灰狐维客等站点都采用这套系统。 开始搭建安装软件">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-08-05T09:34:24.000Z">
-<meta property="article:modified_time" content="2020-08-05T09:34:24.000Z">
+<meta property="og:image" content="https://img-61.oss-cn-shanghai.aliyuncs.com/img/wiki/wiki-1.png?x-oss-process=style/yunying61">
+<meta property="og:image" content="https://img-61.oss-cn-shanghai.aliyuncs.com/img/wiki/wiki-2.png?x-oss-process=style/yunying61">
+<meta property="og:image" content="https://img-61.oss-cn-shanghai.aliyuncs.com/img/wiki/wiki-3.png?x-oss-process=style/yunying61">
+<meta property="og:image" content="https://img-61.oss-cn-shanghai.aliyuncs.com/img/wiki/wiki-4.png?x-oss-process=style/yunying61">
+<meta property="og:image" content="https://img-61.oss-cn-shanghai.aliyuncs.com/img/wiki/wiki-5.png?x-oss-process=style/yunying61">
+<meta property="og:image" content="https://img-61.oss-cn-shanghai.aliyuncs.com/img/wiki/wiki-6.png?x-oss-process=style/yunying61">
+<meta property="og:image" content="https://img-61.oss-cn-shanghai.aliyuncs.com/img/wiki/wiki-7.png?x-oss-process=style/yunying61">
+<meta property="og:image" content="https://img-61.oss-cn-shanghai.aliyuncs.com/img/wiki/wiki-8.png?x-oss-process=style/yunying61">
+<meta property="og:image" content="https://img-61.oss-cn-shanghai.aliyuncs.com/img/wiki/wiki-over.png?x-oss-process=style/yunying61">
+<meta property="article:published_time" content="2020-08-07T09:35:45.000Z">
+<meta property="article:modified_time" content="2020-08-07T09:35:45.000Z">
 <meta property="article:author" content="yunying61">
-<meta property="article:tag" content="博客">
 <meta property="article:tag" content="CentOS">
-<meta property="article:tag" content="VuePress">
-<meta property="article:tag" content="Node">
+<meta property="article:tag" content="MediaWiki">
+<meta property="article:tag" content="wiki">
+<meta property="article:tag" content="维基">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-61.oss-cn-shanghai.aliyuncs.com/img/wiki/wiki-1.png?x-oss-process=style/yunying61">
 
 
 <link rel="icon" href="/img/yunying61.jpg">
@@ -173,27 +183,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(48)</small></div></li>
-    
-        
-            
-            <li><div data-rel="笔记"><i class="fold iconfont icon-right"></i>笔记<small>(17)</small></div>
-                
-                    <ul class="sub hide">
-                        
-                        <li><div data-rel="激活">激活<small>(1)</small></div>
-                            
-                        </li>
-                            
-                        <li><div data-rel="C/C++">C/C++<small>(10)</small></div>
-                            
-                        </li>
-                            
-                    </ul>
-                
-            </li>
-            
-        
+    <li><div class="all active">全部文章<small>(49)</small></div></li>
     
         
             
@@ -205,7 +195,27 @@
     
         
             
-            <li><div data-rel="IT"><i class="fold iconfont icon-right"></i>IT<small>(21)</small></div>
+            <li><div data-rel="笔记"><i class="fold iconfont icon-right"></i>笔记<small>(17)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="C/C++">C/C++<small>(10)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="激活">激活<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="IT"><i class="fold iconfont icon-right"></i>IT<small>(22)</small></div>
                 
                     <ul class="sub hide">
                         
@@ -221,11 +231,11 @@
     
         
             
-            <li><div data-rel="应用"><i class="fold iconfont icon-right"></i>应用<small>(12)</small></div>
+            <li><div data-rel="应用"><i class="fold iconfont icon-right"></i>应用<small>(13)</small></div>
                 
                     <ul class="sub hide">
                         
-                        <li><div data-rel="程序">程序<small>(9)</small></div>
+                        <li><div data-rel="程序">程序<small>(10)</small></div>
                             
                         </li>
                             
@@ -240,6 +250,10 @@
         
     
         
+            
+            <li><div data-rel="Minecraft">Minecraft<small>(4)</small></div>
+                
+            </li>
             
         
     
@@ -265,22 +279,6 @@
     
         
             
-            <li><div data-rel="Minecraft">Minecraft<small>(4)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="搭建与配置">搭建与配置<small>(12)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
         
     
         
@@ -293,6 +291,18 @@
     
         
             
+            <li><div data-rel="搭建与配置">搭建与配置<small>(13)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
             <li><div data-rel="测试区">测试区<small>(1)</small></div>
                 
             </li>
@@ -300,14 +310,6 @@
         
     
         
-            
-        
-    
-        
-            
-            <li><div data-rel="网络">网络<small>(2)</small></div>
-                
-            </li>
             
         
     
@@ -330,6 +332,14 @@
                         </li>
                             
                     </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="网络">网络<small>(2)</small></div>
                 
             </li>
             
@@ -363,7 +373,7 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="48">
+<input type="hidden" id="yelog_site_posts_number" value="49">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -402,10 +412,6 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a class="color4">markdown</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a class="color5">yunying61</a>
     </li>
     
@@ -418,7 +424,15 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a class="color4">markdown</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a class="color5">hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">C语言</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -434,23 +448,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">C语言</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a class="color1">Nginx</a>
     </li>
     
     <li class="article-tag-list-item">
         <a class="color4">服务器</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">Minecraft</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">我的世界</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -462,11 +464,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">配置文件</a>
+        <a class="color4">FTP</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">FTP</a>
+        <a class="color5">Minecraft</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">我的世界</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -474,11 +480,23 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">笔记</a>
+        <a class="color3">日记</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">日记</a>
+        <a class="color1">Navicat Premium</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">激活</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">配置文件</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">笔记</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -494,19 +512,27 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">Navicat Premium</a>
+        <a class="color1">文件夹加密</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">激活</a>
+        <a class="color3">加密</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">MongoDB</a>
+        <a class="color4">文件夹</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">数据库</a>
+        <a class="color5">右键菜单</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">Windows</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">命令提示符</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -534,18 +560,6 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">文件夹加密</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">加密</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">文件夹</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a class="color1">公式编辑器</a>
     </li>
     
@@ -566,15 +580,19 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">右键菜单</a>
+        <a class="color3">MongoDB</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">Windows</a>
+        <a class="color4">数据库</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">命令提示符</a>
+        <a class="color4">C++</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">const</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -598,15 +616,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">C++</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">const</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a class="color2">new关键字</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">引用</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -618,19 +632,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">引用</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">形参</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a class="color2">类</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">内联函数</a>
+        <a class="color3">形参</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -642,15 +648,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color2">C</a>
+        <a class="color5">内联函数</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">头文件</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">.h</a>
+        <a class="color5">重载函数</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -674,11 +676,31 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">权限</a>
+        <a class="color5">MediaWiki</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">重载函数</a>
+        <a class="color5">wiki</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">维基</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">C</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">头文件</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">.h</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">权限</a>
     </li>
     
     <div class="clearfix"></div>
@@ -686,14 +708,6 @@
 
     
     <nav id="title-list-nav">
-        
-        <a  class="笔记 "
-           href="/2019/11/30/markdown/"
-           data-tag="markdown"
-           data-author="" >
-            <span class="post-title" title="markdown的笔记（代码运用)">markdown的笔记（代码运用)</span>
-            <span class="post-date" title="2019-11-30 17:33:10">2019/11/30</span>
-        </a>
         
         <a  class="未分类 "
            href="/2019/12/01/%E6%98%9F%E5%B9%95%C2%B7%E4%BA%91%E5%BD%B1%E7%9A%84%E7%BD%91%E9%A1%B5%E9%93%BE%E6%8E%A5%E5%BA%93/"
@@ -704,19 +718,19 @@
         </a>
         
         <a  class="笔记 "
+           href="/2019/11/30/markdown/"
+           data-tag="markdown"
+           data-author="" >
+            <span class="post-title" title="markdown的笔记（代码运用)">markdown的笔记（代码运用)</span>
+            <span class="post-date" title="2019-11-30 17:33:10">2019/11/30</span>
+        </a>
+        
+        <a  class="笔记 "
            href="/2019/12/01/hexo-note/"
            data-tag="hexo"
            data-author="" >
             <span class="post-title" title="hexo-note(hexo的笔记)">hexo-note(hexo的笔记)</span>
             <span class="post-date" title="2019-12-01 15:03:07">2019/12/01</span>
-        </a>
-        
-        <a  class="IT 技术 "
-           href="/2020/01/01/Windows%E4%B8%8Bmklink%E4%BD%BF%E7%94%A8/"
-           data-tag="cmd,mklink,windows"
-           data-author="" >
-            <span class="post-title" title="Windows下mklink使用">Windows下mklink使用</span>
-            <span class="post-date" title="2020-01-01 10:51:39">2020/01/01</span>
         </a>
         
         <a  class="笔记 "
@@ -727,7 +741,15 @@
             <span class="post-date" title="2019-12-05 19:41:43">2019/12/05</span>
         </a>
         
-        <a  class="应用 程序 服务器 搭建与配置 搭建 网络 "
+        <a  class="IT 技术 "
+           href="/2020/01/01/Windows%E4%B8%8Bmklink%E4%BD%BF%E7%94%A8/"
+           data-tag="cmd,mklink,windows"
+           data-author="" >
+            <span class="post-title" title="Windows下mklink使用">Windows下mklink使用</span>
+            <span class="post-date" title="2020-01-01 10:51:39">2020/01/01</span>
+        </a>
+        
+        <a  class="应用 服务器 程序 搭建与配置 搭建 网络 "
            href="/2020/01/13/Windows%E4%B8%8B%E7%9A%84Nginx%E5%9B%BE%E7%89%87%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"
            data-tag="Nginx,服务器"
            data-author="" >
@@ -752,14 +774,6 @@
         </a>
         
         <a  class=""
-           href="/2020/01/14/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Minecraft服务器 问题汇总">Minecraft服务器 问题汇总</span>
-            <span class="post-date" title="2020-01-14 13:48:13">2020/01/14</span>
-        </a>
-        
-        <a  class=""
            href="/2020/01/14/Nginx-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
            data-tag=""
            data-author="" >
@@ -767,20 +781,12 @@
             <span class="post-date" title="2020-01-14 13:47:39">2020/01/14</span>
         </a>
         
-        <a  class="服务器 Minecraft 搭建与配置 搭建 "
-           href="/2020/01/10/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"
-           data-tag="服务器,Minecraft,我的世界"
+        <a  class=""
+           href="/2020/01/14/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag=""
            data-author="" >
-            <span class="post-title" title="Minecraft服务器搭建">Minecraft服务器搭建</span>
-            <span class="post-date" title="2020-01-10 13:47:38">2020/01/10</span>
-        </a>
-        
-        <a  class="Minecraft 搭建与配置 "
-           href="/2020/01/26/%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83/"
-           data-tag="java,环境搭建"
-           data-author="" >
-            <span class="post-title" title="配置Java环境">配置Java环境</span>
-            <span class="post-date" title="2020-01-26 17:30:28">2020/01/26</span>
+            <span class="post-title" title="Minecraft服务器 问题汇总">Minecraft服务器 问题汇总</span>
+            <span class="post-date" title="2020-01-14 13:48:13">2020/01/14</span>
         </a>
         
         <a  class=""
@@ -791,12 +797,36 @@
             <span class="post-date" title="2020-01-10 15:46:56">2020/01/10</span>
         </a>
         
-        <a  class="服务器 Minecraft 搭建与配置 搭建 "
-           href="/2020/01/30/%E9%85%8D%E7%BD%AEMinecraft%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%96%87%E4%BB%B6/"
-           data-tag="服务器,Minecraft,我的世界,配置文件"
+        <a  class="Minecraft 搭建与配置 "
+           href="/2020/01/26/%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83/"
+           data-tag="java,环境搭建"
            data-author="" >
-            <span class="post-title" title="配置Minecraft服务端文件">配置Minecraft服务端文件</span>
-            <span class="post-date" title="2020-01-30 14:43:07">2020/01/30</span>
+            <span class="post-title" title="配置Java环境">配置Java环境</span>
+            <span class="post-date" title="2020-01-26 17:30:28">2020/01/26</span>
+        </a>
+        
+        <a  class="服务器 搭建与配置 搭建 网络 "
+           href="/2019/12/14/FTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"
+           data-tag="服务器,FTP"
+           data-author="" >
+            <span class="post-title" title="FTP服务器搭建">FTP服务器搭建</span>
+            <span class="post-date" title="2019-12-14 15:34:19">2019/12/14</span>
+        </a>
+        
+        <a  class="Minecraft 服务器 搭建与配置 搭建 "
+           href="/2020/01/10/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"
+           data-tag="服务器,Minecraft,我的世界"
+           data-author="" >
+            <span class="post-title" title="Minecraft服务器搭建">Minecraft服务器搭建</span>
+            <span class="post-date" title="2020-01-10 13:47:38">2020/01/10</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/01/18/CSDN%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%A0%BC%E5%BC%8F/"
+           data-tag="CSDN"
+           data-author="" >
+            <span class="post-title" title="CSDN的博客格式">CSDN的博客格式</span>
+            <span class="post-date" title="2020-01-18 12:20:00">2020/01/18</span>
         </a>
         
         <a  class=""
@@ -807,12 +837,28 @@
             <span class="post-date" title="2020-02-07 12:25:35">2020/02/07</span>
         </a>
         
-        <a  class="服务器 搭建与配置 搭建 网络 "
-           href="/2019/12/14/FTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"
-           data-tag="服务器,FTP"
+        <a  class="日记 "
+           href="/2020/02/11/%E5%85%A5%E5%9D%91%E6%97%A5%E8%AE%B0-%E6%AD%A3%E5%BC%8F%E5%BC%80%E5%A7%8B%E7%8E%A9Linux/"
+           data-tag="日记"
            data-author="" >
-            <span class="post-title" title="FTP服务器搭建">FTP服务器搭建</span>
-            <span class="post-date" title="2019-12-14 15:34:19">2019/12/14</span>
+            <span class="post-title" title="入坑日记-正式开始玩Linux">入坑日记-正式开始玩Linux</span>
+            <span class="post-date" title="2020-02-11 15:03:40">2020/02/11</span>
+        </a>
+        
+        <a  class="笔记 应用 程序 激活 "
+           href="/2020/02/16/Navicat-Premium15%E6%BF%80%E6%B4%BB%E8%BF%87%E7%A8%8B/"
+           data-tag="Navicat Premium,激活"
+           data-author="" >
+            <span class="post-title" title="Navicat Premium 15激活过程">Navicat Premium 15激活过程</span>
+            <span class="post-date" title="2020-02-16 16:54:54">2020/02/16</span>
+        </a>
+        
+        <a  class="Minecraft 服务器 搭建与配置 搭建 "
+           href="/2020/01/30/%E9%85%8D%E7%BD%AEMinecraft%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%96%87%E4%BB%B6/"
+           data-tag="服务器,Minecraft,我的世界,配置文件"
+           data-author="" >
+            <span class="post-title" title="配置Minecraft服务端文件">配置Minecraft服务端文件</span>
+            <span class="post-date" title="2020-01-30 14:43:07">2020/01/30</span>
         </a>
         
         <a  class="Minecraft "
@@ -824,27 +870,11 @@
         </a>
         
         <a  class="笔记 "
-           href="/2020/01/18/CSDN%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%A0%BC%E5%BC%8F/"
-           data-tag="CSDN"
-           data-author="" >
-            <span class="post-title" title="CSDN的博客格式">CSDN的博客格式</span>
-            <span class="post-date" title="2020-01-18 12:20:00">2020/01/18</span>
-        </a>
-        
-        <a  class="笔记 "
            href="/2020/02/16/%E8%A6%81%E5%BC%95%E8%B5%B7%E9%87%8D%E8%A7%86%E7%9A%84%E6%96%B9%E6%96%B9%E9%9D%A2%E9%9D%A2/"
-           data-tag="笔记,日记,重要"
+           data-tag="日记,笔记,重要"
            data-author="" >
             <span class="post-title" title="要引起重视的方方面面">要引起重视的方方面面</span>
             <span class="post-date" title="2020-02-16 22:10:59">2020/02/16</span>
-        </a>
-        
-        <a  class="日记 "
-           href="/2020/02/11/%E5%85%A5%E5%9D%91%E6%97%A5%E8%AE%B0-%E6%AD%A3%E5%BC%8F%E5%BC%80%E5%A7%8B%E7%8E%A9Linux/"
-           data-tag="日记"
-           data-author="" >
-            <span class="post-title" title="入坑日记-正式开始玩Linux">入坑日记-正式开始玩Linux</span>
-            <span class="post-date" title="2020-02-11 15:03:40">2020/02/11</span>
         </a>
         
         <a  class="测试区 "
@@ -855,31 +885,23 @@
             <span class="post-date" title="2020-02-16 21:40:41">2020/02/16</span>
         </a>
         
-        <a  class="笔记 应用 程序 激活 "
-           href="/2020/02/16/Navicat-Premium15%E6%BF%80%E6%B4%BB%E8%BF%87%E7%A8%8B/"
-           data-tag="Navicat Premium,激活"
+        <a  class="IT 应用 技术 程序 "
+           href="/2020/02/17/%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8A%A0%E5%AF%86/"
+           data-tag="文件夹加密,加密,文件夹"
            data-author="" >
-            <span class="post-title" title="Navicat Premium 15激活过程">Navicat Premium 15激活过程</span>
-            <span class="post-date" title="2020-02-16 16:54:54">2020/02/16</span>
+            <span class="post-title" title="简单的文件夹加密">简单的文件夹加密</span>
+            <span class="post-date" title="2020-02-17 14:16:24">2020/02/17</span>
         </a>
         
-        <a  class=""
-           href="/2020/02/16/%E5%AF%B9%E5%9B%BE%E7%89%87%E8%BF%9B%E8%A1%8C%E5%BC%95%E7%94%A8%E7%9A%84%E6%80%BB%E7%BB%93/"
-           data-tag=""
+        <a  class="IT 应用 技术 技巧 "
+           href="/2020/02/23/%E5%9C%A8Windows%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%89%93%E5%BC%80cmd%E5%91%BD%E4%BB%A4/"
+           data-tag="cmd,右键菜单,Windows,命令提示符"
            data-author="" >
-            <span class="post-title" title="对图片进行引用的总结">对图片进行引用的总结</span>
-            <span class="post-date" title="2020-02-16 22:32:29">2020/02/16</span>
+            <span class="post-title" title="在Windows右键菜单中添加‘打开cmd命令’">在Windows右键菜单中添加‘打开cmd命令’</span>
+            <span class="post-date" title="2020-02-23 16:45:53">2020/02/23</span>
         </a>
         
-        <a  class="应用 程序 搭建与配置 "
-           href="/2020/02/22/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"
-           data-tag="MongoDB,数据库"
-           data-author="" >
-            <span class="post-title" title="MongoDB数据库 安装与配置">MongoDB数据库 安装与配置</span>
-            <span class="post-date" title="2020-02-22 21:53:49">2020/02/22</span>
-        </a>
-        
-        <a  class="应用 程序 服务器 搭建与配置 搭建 "
+        <a  class="应用 服务器 程序 搭建与配置 搭建 "
            href="/2020/02/22/leanote%E8%9A%82%E8%9A%81%E7%AC%94%E8%AE%B0-%E7%A7%81%E4%BA%BA%E4%BA%91%E7%AC%94%E8%AE%B0%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/"
            data-tag="笔记,leanote,蚂蚁笔记,搭建"
            data-author="" >
@@ -903,14 +925,6 @@
             <span class="post-date" title="2020-03-02 11:59:12">2020/03/02</span>
         </a>
         
-        <a  class="IT 应用 技术 程序 "
-           href="/2020/02/17/%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8A%A0%E5%AF%86/"
-           data-tag="文件夹加密,加密,文件夹"
-           data-author="" >
-            <span class="post-title" title="简单的文件夹加密">简单的文件夹加密</span>
-            <span class="post-date" title="2020-02-17 14:16:24">2020/02/17</span>
-        </a>
-        
         <a  class="IT 应用 程序 搭建与配置 "
            href="/2020/03/31/%E5%85%AC%E5%BC%8F%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E8%AE%BE%E7%BD%AE/"
            data-tag="公式编辑器,Equation Editor,Office,WPS,矩阵"
@@ -919,44 +933,12 @@
             <span class="post-date" title="2020-03-31 12:19:27">2020/03/31</span>
         </a>
         
-        <a  class="IT 应用 技术 技巧 "
-           href="/2020/02/23/%E5%9C%A8Windows%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%89%93%E5%BC%80cmd%E5%91%BD%E4%BB%A4/"
-           data-tag="cmd,右键菜单,Windows,命令提示符"
+        <a  class="应用 程序 搭建与配置 "
+           href="/2020/02/22/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"
+           data-tag="MongoDB,数据库"
            data-author="" >
-            <span class="post-title" title="在Windows右键菜单中添加‘打开cmd命令’">在Windows右键菜单中添加‘打开cmd命令’</span>
-            <span class="post-date" title="2020-02-23 16:45:53">2020/02/23</span>
-        </a>
-        
-        <a  class="IT 应用 技巧 问题解决 电脑 "
-           href="/2020/04/03/Win-R%E8%BF%90%E8%A1%8C%E6%B2%A1%E6%9C%89%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"
-           data-tag="运行,Win+R,历史记录,解决,记录"
-           data-author="" >
-            <span class="post-title" title="Win+R运行没有历史记录的解决方法">Win+R运行没有历史记录的解决方法</span>
-            <span class="post-date" title="2020-04-03 22:38:47">2020/04/03</span>
-        </a>
-        
-        <a  class="笔记 IT C/C++ "
-           href="/2020/05/31/C-%E4%B8%AD-const-%E7%9A%84%E7%94%A8%E6%B3%95/"
-           data-tag="笔记,C++,const"
-           data-author="" >
-            <span class="post-title" title="C++ 中 const 的用法">C++ 中 const 的用法</span>
-            <span class="post-date" title="2020-05-31 23:03:53">2020/05/31</span>
-        </a>
-        
-        <a  class="笔记 IT C/C++ "
-           href="/2020/05/31/C-%E4%B8%AD-new-%E7%9A%84%E7%94%A8%E6%B3%95/"
-           data-tag="笔记,C++,new关键字"
-           data-author="" >
-            <span class="post-title" title="C++ 中 new 的用法">C++ 中 new 的用法</span>
-            <span class="post-date" title="2020-05-31 23:03:30">2020/05/31</span>
-        </a>
-        
-        <a  class="IT 应用 技术 程序 搭建与配置 "
-           href="/2020/03/02/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%92%8C%E7%AE%80%E5%8D%95%E9%83%A8%E7%BD%B2/"
-           data-tag="hexo,搭建,博客"
-           data-author="" >
-            <span class="post-title" title="Hexo博客搭建和简单部署">Hexo博客搭建和简单部署</span>
-            <span class="post-date" title="2020-03-02 12:00:00">2020/03/02</span>
+            <span class="post-title" title="MongoDB数据库 安装与配置">MongoDB数据库 安装与配置</span>
+            <span class="post-date" title="2020-02-22 21:53:49">2020/02/22</span>
         </a>
         
         <a  class=""
@@ -968,11 +950,43 @@
         </a>
         
         <a  class="笔记 IT C/C++ "
-           href="/2020/05/31/C-%E4%B8%AD-setw-%E5%87%BD%E6%95%B0-%E6%8E%A7%E5%88%B6%E5%AD%97%E6%AE%B5%E5%AE%BD%E5%BA%A6/"
-           data-tag="笔记,C++,setw,字符控制"
+           href="/2020/05/31/C-%E4%B8%AD-const-%E7%9A%84%E7%94%A8%E6%B3%95/"
+           data-tag="笔记,C++,const"
            data-author="" >
-            <span class="post-title" title="C++ 中 setw() 函数  控制字段宽度">C++ 中 setw() 函数  控制字段宽度</span>
-            <span class="post-date" title="2020-05-31 23:06:37">2020/05/31</span>
+            <span class="post-title" title="C++ 中 const 的用法">C++ 中 const 的用法</span>
+            <span class="post-date" title="2020-05-31 23:03:53">2020/05/31</span>
+        </a>
+        
+        <a  class="IT 应用 技巧 问题解决 电脑 "
+           href="/2020/04/03/Win-R%E8%BF%90%E8%A1%8C%E6%B2%A1%E6%9C%89%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"
+           data-tag="运行,Win+R,历史记录,解决,记录"
+           data-author="" >
+            <span class="post-title" title="Win+R运行没有历史记录的解决方法">Win+R运行没有历史记录的解决方法</span>
+            <span class="post-date" title="2020-04-03 22:38:47">2020/04/03</span>
+        </a>
+        
+        <a  class="IT 应用 技术 程序 搭建与配置 "
+           href="/2020/03/02/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%92%8C%E7%AE%80%E5%8D%95%E9%83%A8%E7%BD%B2/"
+           data-tag="hexo,搭建,博客"
+           data-author="" >
+            <span class="post-title" title="Hexo博客搭建和简单部署">Hexo博客搭建和简单部署</span>
+            <span class="post-date" title="2020-03-02 12:00:00">2020/03/02</span>
+        </a>
+        
+        <a  class="笔记 IT C/C++ "
+           href="/2020/05/31/C-%E4%B8%AD-new-%E7%9A%84%E7%94%A8%E6%B3%95/"
+           data-tag="笔记,C++,new关键字"
+           data-author="" >
+            <span class="post-title" title="C++ 中 new 的用法">C++ 中 new 的用法</span>
+            <span class="post-date" title="2020-05-31 23:03:30">2020/05/31</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/02/16/%E5%AF%B9%E5%9B%BE%E7%89%87%E8%BF%9B%E8%A1%8C%E5%BC%95%E7%94%A8%E7%9A%84%E6%80%BB%E7%BB%93/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="对图片进行引用的总结">对图片进行引用的总结</span>
+            <span class="post-date" title="2020-02-16 22:32:29">2020/02/16</span>
         </a>
         
         <a  class="笔记 IT C/C++ "
@@ -984,11 +998,11 @@
         </a>
         
         <a  class="笔记 IT C/C++ "
-           href="/2020/05/31/C-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0-%E9%BB%98%E8%AE%A4%E5%BD%A2%E5%8F%82/"
-           data-tag="笔记,C++,形参"
+           href="/2020/05/31/C-%E4%B8%AD-setw-%E5%87%BD%E6%95%B0-%E6%8E%A7%E5%88%B6%E5%AD%97%E6%AE%B5%E5%AE%BD%E5%BA%A6/"
+           data-tag="笔记,C++,setw,字符控制"
            data-author="" >
-            <span class="post-title" title="C++ 自定义函数 默认形参">C++ 自定义函数 默认形参</span>
-            <span class="post-date" title="2020-05-31 23:11:47">2020/05/31</span>
+            <span class="post-title" title="C++ 中 setw() 函数  控制字段宽度">C++ 中 setw() 函数  控制字段宽度</span>
+            <span class="post-date" title="2020-05-31 23:06:37">2020/05/31</span>
         </a>
         
         <a  class="笔记 IT C/C++ "
@@ -1000,11 +1014,11 @@
         </a>
         
         <a  class="笔记 IT C/C++ "
-           href="/2020/05/31/C-%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0/"
-           data-tag="笔记,C++,内联函数"
+           href="/2020/05/31/C-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0-%E9%BB%98%E8%AE%A4%E5%BD%A2%E5%8F%82/"
+           data-tag="笔记,C++,形参"
            data-author="" >
-            <span class="post-title" title="C++ 内联函数">C++ 内联函数</span>
-            <span class="post-date" title="2020-05-31 23:02:21">2020/05/31</span>
+            <span class="post-title" title="C++ 自定义函数 默认形参">C++ 自定义函数 默认形参</span>
+            <span class="post-date" title="2020-05-31 23:11:47">2020/05/31</span>
         </a>
         
         <a  class="笔记 IT C/C++ "
@@ -1016,11 +1030,19 @@
         </a>
         
         <a  class="笔记 IT C/C++ "
-           href="/2020/05/31/C%E8%AF%AD%E8%A8%80-%E6%A0%87%E5%87%86%E5%A4%B4%E6%96%87%E4%BB%B6-%E8%AF%A6/"
-           data-tag="笔记,C,头文件,.h"
+           href="/2020/05/31/C-%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0/"
+           data-tag="笔记,C++,内联函数"
            data-author="" >
-            <span class="post-title" title="C语言 标准头文件(详)">C语言 标准头文件(详)</span>
-            <span class="post-date" title="2020-05-31 22:55:28">2020/05/31</span>
+            <span class="post-title" title="C++ 内联函数">C++ 内联函数</span>
+            <span class="post-date" title="2020-05-31 23:02:21">2020/05/31</span>
+        </a>
+        
+        <a  class="笔记 IT C/C++ "
+           href="/2020/05/31/C-%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0/"
+           data-tag="笔记,C++,重载函数"
+           data-author="" >
+            <span class="post-title" title="C++ 重载函数">C++ 重载函数</span>
+            <span class="post-date" title="2020-05-31 23:10:19">2020/05/31</span>
         </a>
         
         <a  class="笔记 学习 "
@@ -1039,28 +1061,20 @@
             <span class="post-date" title="2020-08-05 17:34:24">2020/08/05</span>
         </a>
         
-        <a  class="IT 应用 技术 技巧 问题解决 "
-           href="/2020/07/10/winodows%E6%96%87%E4%BB%B6%E5%A4%B9%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4-%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E6%89%80%E6%9C%89%E8%80%85/"
-           data-tag="windows,文件夹,权限"
+        <a  class="IT 应用 程序 搭建与配置 "
+           href="/2020/08/07/%E5%9C%A8CentOS-8%E4%B8%8A%E6%90%AD%E5%BB%BAMediaWiki%E7%9F%A5%E8%AF%86%E5%BA%93/"
+           data-tag="CentOS,MediaWiki,wiki,维基"
            data-author="" >
-            <span class="post-title" title="winodows文件夹无法删除 无法显示当前所有者">winodows文件夹无法删除 无法显示当前所有者</span>
-            <span class="post-date" title="2020-07-10 15:16:05">2020/07/10</span>
+            <span class="post-title" title="在CentOS-8上搭建MediaWiki知识库">在CentOS-8上搭建MediaWiki知识库</span>
+            <span class="post-date" title="2020-08-07 17:35:45">2020/08/07</span>
         </a>
         
         <a  class="笔记 IT C/C++ "
-           href="/2020/05/31/C-%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0/"
-           data-tag="笔记,C++,重载函数"
+           href="/2020/05/31/C%E8%AF%AD%E8%A8%80-%E6%A0%87%E5%87%86%E5%A4%B4%E6%96%87%E4%BB%B6-%E8%AF%A6/"
+           data-tag="笔记,C,头文件,.h"
            data-author="" >
-            <span class="post-title" title="C++ 重载函数">C++ 重载函数</span>
-            <span class="post-date" title="2020-05-31 23:10:19">2020/05/31</span>
-        </a>
-        
-        <a  class="IT 应用 技术 程序 问题解决 "
-           href="/2020/07/12/Node-js%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5-%E6%9B%B4%E6%96%B0%E5%A4%B1%E8%B4%A5-%E6%B2%A1%E6%9C%89%E8%B6%B3%E5%A4%9F%E7%9A%84%E6%9D%83%E9%99%90%E8%AE%BF%E9%97%AE/"
-           data-tag="windows,文件夹,Node,权限"
-           data-author="" >
-            <span class="post-title" title="Node.js安装失败、更新失败 没有足够的权限访问">Node.js安装失败、更新失败 没有足够的权限访问</span>
-            <span class="post-date" title="2020-07-12 18:25:13">2020/07/12</span>
+            <span class="post-title" title="C语言 标准头文件(详)">C语言 标准头文件(详)</span>
+            <span class="post-date" title="2020-05-31 22:55:28">2020/05/31</span>
         </a>
         
         <a  class="未分类 "
@@ -1069,6 +1083,22 @@
            data-author="" >
             <span class="post-title" title="Hello World">Hello World</span>
             <span class="post-date" title="2020-01-14 16:58:47">2020/01/14</span>
+        </a>
+        
+        <a  class="IT 应用 技术 技巧 问题解决 "
+           href="/2020/07/10/winodows%E6%96%87%E4%BB%B6%E5%A4%B9%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4-%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E6%89%80%E6%9C%89%E8%80%85/"
+           data-tag="windows,文件夹,权限"
+           data-author="" >
+            <span class="post-title" title="winodows文件夹无法删除 无法显示当前所有者">winodows文件夹无法删除 无法显示当前所有者</span>
+            <span class="post-date" title="2020-07-10 15:16:05">2020/07/10</span>
+        </a>
+        
+        <a  class="IT 应用 技术 程序 问题解决 "
+           href="/2020/07/12/Node-js%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5-%E6%9B%B4%E6%96%B0%E5%A4%B1%E8%B4%A5-%E6%B2%A1%E6%9C%89%E8%B6%B3%E5%A4%9F%E7%9A%84%E6%9D%83%E9%99%90%E8%AE%BF%E9%97%AE/"
+           data-tag="windows,文件夹,Node,权限"
+           data-author="" >
+            <span class="post-title" title="Node.js安装失败、更新失败 没有足够的权限访问">Node.js安装失败、更新失败 没有足够的权限访问</span>
+            <span class="post-date" title="2020-07-12 18:25:13">2020/07/12</span>
         </a>
         
     </nav>
@@ -1235,7 +1265,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#markdown','#yunying61','#HTML','#网页','#hexo','#cmd','#mklink','#windows','#C语言','#Nginx','#服务器','#Minecraft','#我的世界','#java','#环境搭建','#配置文件','#FTP','#CSDN','#笔记','#日记','#重要','#测试','#试验','#Navicat Premium','#激活','#MongoDB','#数据库','#leanote','#蚂蚁笔记','#搭建','#博客','#配置','#部署','#文件夹加密','#加密','#文件夹','#公式编辑器','#Equation Editor','#Office','#WPS','#矩阵','#右键菜单','#Windows','#命令提示符','#运行','#Win+R','#历史记录','#解决','#记录','#C++','#const','#new关键字','#setw','#字符控制','#引用','#形参','#类','#内联函数','#static','#静态存储','#C','#头文件','#.h','#LaTeX','#公式','#CentOS','#VuePress','#Node','#权限','#重载函数',],
+            'data': ['#yunying61','#HTML','#网页','#markdown','#hexo','#C语言','#cmd','#mklink','#windows','#Nginx','#服务器','#java','#环境搭建','#FTP','#Minecraft','#我的世界','#CSDN','#日记','#Navicat Premium','#激活','#配置文件','#笔记','#重要','#测试','#试验','#文件夹加密','#加密','#文件夹','#右键菜单','#Windows','#命令提示符','#leanote','#蚂蚁笔记','#搭建','#博客','#配置','#部署','#公式编辑器','#Equation Editor','#Office','#WPS','#矩阵','#MongoDB','#数据库','#C++','#const','#运行','#Win+R','#历史记录','#解决','#记录','#new关键字','#引用','#setw','#字符控制','#类','#形参','#static','#静态存储','#内联函数','#重载函数','#LaTeX','#公式','#CentOS','#VuePress','#Node','#MediaWiki','#wiki','#维基','#C','#头文件','#.h','#权限',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
